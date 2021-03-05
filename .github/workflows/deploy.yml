@@ -1,0 +1,50 @@
+name: Laravel Continuous Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: '7.4'
+      - name: Setup node
+        uses: actions/setup-node@master
+        with:
+          node-version: 12
+      - uses: actions/checkout@master
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Install Composer dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Install Node dependencies
+        run: yarn install --non-interactive --pure-lockfile --force --production=false
+      - name: Compile assets with Yarn
+        run: yarn run production
+      - name: Generate key
+        run: php artisan key:generate
+      - name: Set directory permissions
+        run: chmod -R 777 storage bootstrap/cache
+      - name: Create database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+        run: vendor/bin/phpunit
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deployment
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: ${{ secrets.DEPLOY_URL }}
+          method: 'GET'
+

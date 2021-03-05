@@ -43,7 +43,9 @@
                             <td>{{ $signature->full_name }}</td>
                         </tr>
                     @empty
-                        @lang('signatures.empty')
+                        <tr>
+                            <td>@lang('signatures.empty')</td>
+                        </tr>
                     @endforelse
                     </tbody>
                 </table>

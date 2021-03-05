@@ -1,0 +1,24 @@
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.page-item:first-child .page-link {
+    color: $theme !important;
+}
+
+.page-item:last-child .page-link {
+    color: $theme !important;
+}
+
+.page-link {
+    color: $theme !important;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: white !important;
+    background-color: $theme;
+    border-color: $theme;
+}

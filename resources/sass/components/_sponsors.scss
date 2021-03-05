@@ -1,0 +1,159 @@
+.mobile-sponsors img {
+    width: 100%;
+    height: auto;
+}
+
+.mobile-sponsors .row {
+    margin: 10px 0;
+}
+
+.mobile-sponsors .col {
+    height: 120px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.mobile-sponsors .col img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sponsors {
+    margin: 50px 0;
+}
+
+.sponsors h2 {
+    font-family: 'd-dinregular', sans-serif;
+    font-size: 36px;
+    color: $darken-theme;
+    font-weight: bold;
+}
+
+.sponsors .position-relative img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 50%;
+}
+
+.sponsors .row {
+    height: 150px;
+    flex-wrap: unset;
+}
+
+.sponsors .content-text a {
+    color: $theme !important;
+}
+
+.sponsors .content-text {
+    text-align: center;
+    margin: 50px auto auto !important;
+    font-size: 18px;
+    max-width: 500px !important;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
+    .sponsors .content-text {
+        width: 100% !important;
+    }
+
+    .sponsors .col-md-2 {
+        height: 100%;
+    }
+
+    .mobile-sponsors {
+        margin-top: 20px;
+    }
+
+    .mobile-sponsors .row {
+        height: 100%
+    }
+
+    .mobile-sponsors .row div {
+        height: 150px
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+
+    .show-desktop {
+        display: none !important;
+    }
+}
+
+.hide-desktop {
+    display: none;
+}
+
+.hide-mobile {
+    display: none;
+}
+
+.show-desktop {
+    display: block;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    .mobile-sponsors {
+        margin-top: 20px;
+    }
+
+    .mobile-sponsors .row {
+        height: 100%
+    }
+
+    .mobile-sponsors .row div {
+        height: 150px
+    }
+
+    .sponsors .col-md-2 {
+        height: 100%;
+    }
+
+    .sponsors .content-text {
+        width: 100% !important;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+
+    .show-desktop {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+    .mobile-sponsors {
+        margin-top: 20px;
+    }
+
+    .mobile-sponsors .row {
+        height: 100%
+    }
+
+    .mobile-sponsors .row div {
+        height: 150px
+    }
+
+    .sponsors .col-md-2 {
+        height: 100%;
+    }
+
+    .sponsors .content-text {
+        width: 100% !important;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+
+    .show-desktop {
+        display: none !important;
+    }
+}

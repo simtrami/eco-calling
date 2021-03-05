@@ -1,0 +1,4 @@
+// $theme must be defined in the .env file, as MIX_APP_THEME, e.g. MIX_APP_THEME="#17925A"
+$darken-theme: darken($theme, 15%);
+// $accent must be defined in the .env file, as MIX_APP_ACCENT, e.g. MIX_APP_ACCENT="#FF650E"
+$dark-gray: #333333;

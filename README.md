@@ -1,0 +1,60 @@
+# Eco-calling - A web template for ecological awakenings
+
+## Development
+
+This project uses the [Laravel](https://laravel.com/) framework. Please, refer to the documentation version 8.x for
+contributing to the project.
+
+### Getting started
+
+If you are new to using Laravel, consider taking the time to familiarize with the framework concepts. There are
+plentiful of resources on the subjects, the most important being
+the [official documentation](https://laravel.com/docs/8.x)
+and the [Laracasts video guides](https://laracasts.com/topics/laravel).
+
+Once you have cloned the repository, install the project's dependencies.
+
+```bash
+git clone https://github.com/simtrami/eco-calling
+cd eco-calling
+composer install
+```
+
+### Environment
+
+In order to test the code, you will need to comply with the
+requirements [here](https://laravel.com/docs/8.x/installation#server-requirements). For setting up your environment
+quickly, consider using [Valet](https://laravel.com/docs/8.x/valet)
+if you are on MacOS, or [Homestead](https://laravel.com/docs/8.x/homestead) otherwise. You will thus only need
+the [PHP client](https://www.php.net/downloads) (≥v7.3)
+and the [Composer executable](https://getcomposer.org/download/).
+
+The application's environment parameters must be set in the `.env` file in the project root directory. If you don't have
+this file, just copy `.env.example` into `.env` and generate a new key.
+
+```bash
+php -r "file_exists('.env') || copy('.env.example', '.env');"
+php artisan key:generate
+```
+
+The default parameters are set to work within a Homestead environment. You must at least change the database parameters
+to suit your own environment. The [Laravel database documentation](https://laravel.com/docs/8.x/database#configuration)
+gives out them most common configurations as examples.
+
+Then, execute the database migrations and start the development server.
+
+```bash
+php artisan migrate
+php artisan serve
+```
+
+### Testing
+
+You can run tests using the `php artisan test` command or via the PHPUnit executable with `vendor/bin/phpunit`. They
+will automatically use the settings defined in the `phpunit.xml` file located in the project root. If you are on
+Homestead, make sure to run the tests inside the Vagrant box as you might encounter database connection issues
+otherwise.
+
+For anything regarding testing, please refer to
+the [Laravel testing documentation](https://laravel.com/docs/8.x/testing).
+

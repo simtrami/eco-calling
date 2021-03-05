@@ -1,0 +1,76 @@
+.signing-form .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.signing-form .header h2 {
+    font-family: 'd-dinregular', sans-serif;
+    font-size: 36px;
+    color: $darken-theme;
+    font-weight: bold;
+    margin: 50px 0;
+}
+
+.signing-form .header p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.signing-form .input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signing-form form {
+    width: 100%;
+}
+
+.signing-form label {
+    font-size: 16px;
+    font-family: 'd-din_expdinexp-bold', sans-serif;
+}
+
+.signing-form input {
+    border: 0;
+    border-bottom: 1px solid lightgrey;
+    outline: none;
+}
+
+.signing-form {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.signing-form .register-checkbox {
+    padding-left: 30px;
+    margin-top: 40px;
+}
+
+.signing-form .register-checkbox label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.register-checkbox {
+    display: flex;
+}
+
+@media only screen and (max-device-width: 667px) {
+    .signing-form .header h2 {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-device-width: 812px) {
+    .signing-form .header {
+        flex-direction: column;
+    }
+
+    .signing-form .header p {
+        margin-bottom: 50px;
+    }
+}

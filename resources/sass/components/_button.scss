@@ -13,6 +13,7 @@
 .btn-outline-success:hover {
     background-color: white !important;
     color: $theme !important;
+    border-color: $theme;
 }
 
 .button-find p {
@@ -95,9 +96,5 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
     .button-register button {
         width: 90%;
-    }
-
-    .navbar .btn-outline-success {
-        font-size: 9px;
     }
 }

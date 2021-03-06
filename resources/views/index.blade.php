@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="accented-box">
+        <div class="themed-box">
             <div class="container">
                 <p>Sunt amores manifestum audax, neuter acipenseres. Going to the mind doesn’t hurt joy anymore than
                     inventing creates outer stigma. Why does the ferengi warp?</p>

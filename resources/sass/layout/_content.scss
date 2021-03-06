@@ -65,11 +65,11 @@
     color: white;
 }
 
-.accented-box {
+.themed-box {
     background: $theme;
 }
 
-.accented-box p {
+.themed-box p {
     padding: 50px 0;
     color: white;
     font-family: 'd-dinregular', sans-serif;
@@ -78,12 +78,12 @@
 }
 
 .corpus {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
 }
 
-.corpus .content-text {
+.corpus .container {
     margin-top: -150px;
+    padding-left: calc(1rem + 50px);
     max-width: 900px;
 }
 
@@ -120,7 +120,7 @@
     flex-direction: column;
     position: sticky !important;
     top: 10rem;
-    margin-left: 30px;
+    margin-left: 1rem;
     padding: 0 0;
     text-align: center;
 }
@@ -153,10 +153,22 @@
     opacity: 1;
 }
 
+@include media-breakpoint-down(sm) {
+    .corpus {
+        margin-top: 3rem;
+    }
+
+    .corpus .socials {
+        display: none;
+    }
+
+    .corpus .container {
+        margin-top: unset;
+        padding-left: 15px;
+    }
+}
+
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
-    /*.page-title-section h1 {
-        font-size: 36px;
-    }*/
     .page-title-section p {
         font-size: 24px;
     }
@@ -165,7 +177,7 @@
         width: 100%;
     }
 
-    .accented-box p {
+    .themed-box p {
         font-size: 18px;
     }
 
@@ -177,9 +189,6 @@
         font-size: 18px;
     }
 
-    /*.third-section .content-text h2 {
-        font-size: 36px;
-    }*/
     .corpus .content-text ul li {
         font-size: 18px;
     }
@@ -190,9 +199,6 @@
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
-    /*.page-title-section h1 {
-        font-size: 36px;
-    }*/
     .page-title-section p {
         font-size: 24px;
     }
@@ -201,7 +207,7 @@
         width: 100%;
     }
 
-    .accented-box p {
+    .themed-box p {
         font-size: 18px;
     }
 
@@ -227,9 +233,6 @@
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-    /*.page-title-section h1 {
-        font-size: 36px;
-    }*/
     .page-title-section p {
         font-size: 24px;
     }
@@ -238,7 +241,7 @@
         width: 100%;
     }
 
-    .accented-box p {
+    .themed-box p {
         font-size: 18px;
     }
 

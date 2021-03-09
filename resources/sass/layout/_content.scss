@@ -169,7 +169,8 @@
         display: none;
     }
 
-    .corpus .container {
+    // Back to Bootstrap's default values
+    #main-corpus.corpus .container {
         margin-top: unset;
         padding-left: 15px;
     }

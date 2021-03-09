@@ -1,5 +1,8 @@
 # Eco-calling - A web template for ecological awakenings
 
+[![Laravel Continuous Integration](https://github.com/simtrami/eco-calling/actions/workflows/integrate.yml/badge.svg)](https://github.com/simtrami/eco-calling/actions/workflows/integrate.yml)
+[![Laravel Continuous Deployment](https://github.com/simtrami/eco-calling/actions/workflows/deploy.yml/badge.svg)](https://github.com/simtrami/eco-calling/actions/workflows/deploy.yml)
+
 ## Development
 
 This project uses the [Laravel](https://laravel.com/) framework. Please, refer to the documentation version 8.x for

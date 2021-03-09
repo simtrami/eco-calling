@@ -1,254 +1,76 @@
 .fixed-top {
-    height: 80px;
     background-color: white;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    margin-right: 40px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-}
-
-.navbar-dark .navbar-nav ul {
-    list-style: inherit;
-    display: inherit;
-    margin: initial;
-}
-
-.navbar a:hover {
-    text-decoration: none;
-}
-
-a.nav-link {
-    color: $theme !important;
-}
-
-a.nav-link:focus, a.nav-link:hover {
-    color: $darken-theme !important;
-}
-
-.nav-item.active > .nav-link {
-    text-decoration: underline;
-}
-
-.nav-item.active > .nav-link:hover {
-    text-decoration: none !important;
-}
-
-@media (min-width: 768px) {
-    .navbar-expand-md .navbar-nav {
-        justify-content: flex-end;
-        width: 100%;
-    }
-}
-
-
-.navbar-collapse.collapse.show {
-    background-color: white;
-}
-
-.navbar {
-    width: 100vw;
-}
-
-/*.navbar-dark .navbar-toggler {
-    background-color: $dark-accent;
-}*/
-
-.navbar-toggler {
-    position: relative;
-}
-
-.navbar-toggler .close {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.navbar-toggler[aria-expanded="true"] .close {
-    opacity: 1;
-}
-
-.navbar-toggler[aria-expanded="true"] .bars {
-    opacity: 0;
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
-    .navbar-nav {
-        width: 100%;
-        height: 100vh;
-        background-color: white !IMPORTANT;
-        position: relative;
-    }
-
-    .content-navbar-flex {
-        flex-direction: column;
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        font-size: 21px;
-    }
-
-    .share-socials {
-        display: flex !important;
-        flex-direction: column;
-        margin-top: 200px;
-    }
-
-    .share-socials p {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 12px;
-        text-align: center;
-        color: $theme;
-    }
-
-    .share-socials div {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .share-socials div div {
-        display: flex;
-        justify-content: space-around;
-    }
-
-
-    .share-socials div a {
-        width: 16px;
-        height: 16px;
-    }
-
-    .share-socials div a img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .navbar-dark .navbar-brand {
-        margin-left: 0 !important;
-    }
-}
-
-.navbar-dark .navbar-brand {
-    margin-left: 20px;
 }
 
 .navbar-brand img {
     height: 42px;
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
-    .navbar-nav {
+.navbar-nav > li {
+    list-style: inherit;
+    display: inherit;
+    margin: initial;
+}
+
+.navbar-collapse .navbar-nav .nav-link {
+    margin-right: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: $theme;
+}
+
+.navbar-collapse .navbar-nav .nav-link:hover, .navbar-collapse .navbar-nav .active > .nav-link {
+    color: $darken-theme;
+    text-decoration: underline;
+}
+
+.navbar-collapse .navbar-nav .active > .nav-link:hover {
+    text-decoration: none;
+}
+
+@include media-breakpoint-up(md) {
+    .navbar-expand-md .navbar-nav {
+        justify-content: flex-end;
         width: 100%;
-        height: 100vh;
-        background-color: white !IMPORTANT;
-        position: relative;
-    }
-
-    .content-navbar-flex {
-        flex-direction: column;
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        font-size: 21px;
-    }
-
-    .share-socials {
-        display: flex !important;
-        flex-direction: column;
-        margin-top: 100px;
-    }
-
-    .share-socials p {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 14px;
-        text-align: center;
-        color: $theme;
-    }
-
-    .share-socials div {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .share-socials div div {
-        display: flex;
-        justify-content: space-around;
-    }
-
-
-    .share-socials div a {
-        width: 16px;
-        height: 16px;
-    }
-
-    .share-socials div a img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .navbar-dark .navbar-brand {
-        margin-left: 0 !important;
     }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-    .navbar-nav {
-        width: 100%;
-        height: 100vh;
-        background-color: white !IMPORTANT;
-        position: relative;
+.navbar-toggler {
+    position: relative;
+    color: white;
+    border: none;
+}
+
+.navbar-toggler > .icon {
+    color: $theme;
+    font-size: larger;
+}
+
+@include media-breakpoint-down(sm) {
+    .navbar {
+        padding: 0;
     }
 
-    .content-navbar-flex {
-        flex-direction: column;
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        font-size: 21px;
-    }
-
-    .share-socials {
-        display: flex !important;
-        flex-direction: column;
-        margin-top: 100px;
-    }
-
-    .share-socials p {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 12px;
+    .navbar-collapse {
+        background-color: $theme;
+        color: white !important;
         text-align: center;
-        color: $theme;
     }
 
-    .share-socials div {
-        display: flex;
-        justify-content: space-around;
+    .navbar-collapse .navbar-nav {
+        margin: 1rem auto !important;
     }
 
-    .share-socials div div {
-        display: flex;
-        justify-content: space-around;
+    .navbar-collapse .navbar-nav > li {
+        display: unset;
     }
 
-    .share-socials div a {
-        width: 16px;
-        height: 16px;
+    .navbar-collapse .navbar-nav .nav-link {
+        color: white;
+        margin-right: unset;
     }
 
-    .share-socials div a img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .navbar-dark .navbar-brand {
-        margin-left: 0 !important;
+    .navbar-collapse .navbar-nav .nav-link:hover, .navbar-collapse .navbar-nav .nav-link:focus, .navbar-collapse .navbar-nav .active > .nav-link {
+        color: white;
     }
 }

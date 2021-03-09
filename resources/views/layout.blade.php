@@ -32,66 +32,9 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <a class="navbar-brand" href="{{ route('home') }}">
-        <img src="{{ asset('src/images/logo.png') }}" alt="Logo"/>
-    </a>
-    <div class="show-mobile hide-desktop">
-        <a href="{{ Route::is('home') ? '' : route('home') }}#form"
-           class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit">@lang('form.submit')</a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <img class="bars" src="{{ asset('src/images/bars.svg') }}" alt="nav">
-        <img class="close" src="{{ asset('src/images/close.svg') }}" alt="close">
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar">
-        <div class="navbar-nav mr-auto">
-            <div class="d-flex">
-                <ul>
-                    <li class="nav-item {{ Route::is('home') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('home') }}">@lang('header.home')
-                        </a>
-                    </li>
-                    <li class="nav-item {{ Route::is('signatures') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('signatures') }}">@lang('header.signatures')
-                        </a>
-                    </li>
-                    <li class="nav-item not-active tst">
-                        <a class="nav-link" href="{{ env('LINK_OFFICIAL_WEBSITE') }}"
-                           target="_blank">@lang('header.website')</a>
-                    </li>
-                </ul>
-                <div class="share-socials hide-desktop">
-                    <p>@lang('header.share')</p>
-                    <div>
-                        <div>
-                            <a href="{{ env('LINK_POST_TW') }}" target="_blank">
-                                <img src="{{ asset('src/images/twitter_light.svg') }}" alt="Twitter">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="{{ env('LINK_POST_FB') }}" target="_blank">
-                                <img src="{{ asset('src/images/fb_light.svg') }}" alt="Facebook">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="{{ env('LINK_POST_LIN') }}" target="_blank">
-                                <img src="{{ asset('src/images/linkedin_light.svg') }}" alt="LinkedIn">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="my-2 mr-1 my-lg-0 button-register">
-            <a href="{{ Route::is('home') ? '' : route('home') }}#form">
-                <div class="btn btn-outline-success my-2 my-sm-0 nav-link px-4">@lang('form.submit')</div>
-            </a>
-        </div>
-    </div>
-</nav>
+<div class="fixed-top">
+    <x-nav></x-nav>
+</div>
 
 <!-- Spacer -->
 <div class="mt-4"></div>
@@ -124,7 +67,7 @@
     </div>
 </footer>
 
-<script src="{{ mix('/js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')
 
 </body>

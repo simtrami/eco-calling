@@ -1,4 +1,8 @@
 import '../sass/app.scss';
-// Uncomment to support legacy code:
-// global.$ = $;
+
+// require('./bootstrap');
 import 'bootstrap';
+
+window.onload = function () {
+    console.log('toto');
+}

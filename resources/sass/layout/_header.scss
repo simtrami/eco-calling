@@ -48,7 +48,7 @@
 
 @include media-breakpoint-down(sm) {
     .navbar {
-        padding: 0.5rem 0;
+        padding: 0;
     }
 
     .navbar-collapse {
@@ -70,7 +70,7 @@
         margin-right: unset;
     }
 
-    .navbar-collapse .navbar-nav .nav-link:hover, .navbar-collapse .navbar-nav .active > .nav-link {
+    .navbar-collapse .navbar-nav .nav-link:hover, .navbar-collapse .navbar-nav .nav-link:focus, .navbar-collapse .navbar-nav .active > .nav-link {
         color: white;
     }
 }

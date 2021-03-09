@@ -18,8 +18,6 @@ mix.sass('resources/sass/app.scss', 'public/css', {
     prependData: "$theme: " + process.env.MIX_APP_THEME + ";" + "$accent: " + process.env.MIX_APP_ACCENT + ";"
 });
 
-if (mix.inProduction()) {
-    mix.version();
-} else {
-    mix.sourceMaps(false);
-}
+mix.sourceMaps();
+
+if (mix.inProduction()) mix.version();

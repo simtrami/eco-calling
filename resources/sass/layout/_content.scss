@@ -81,9 +81,13 @@
     margin-bottom: 3rem;
 }
 
-.corpus .container {
+// For the index page only
+#main-corpus.corpus .container {
     margin-top: -150px;
     padding-left: calc(1rem + 50px);
+}
+
+.corpus .container {
     max-width: 900px;
 }
 
@@ -94,10 +98,13 @@
     color: $dark-gray;
 }
 
+.corpus h2 {
+    color: $darken-theme;
+}
+
 .corpus .content-text h2 {
     font-family: 'd-dinregular', sans-serif;
     font-size: 36px;
-    color: $darken-theme;
     font-weight: bold;
     margin-top: 70px;
     margin-bottom: 20px;

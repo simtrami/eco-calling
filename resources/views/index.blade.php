@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div class="corpus">
+        <div id="main-corpus" class="corpus">
             <div class="socials">
                 <div>
                     <span>

@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js');
+mix.js('resources/js/index.js', 'public/js');
 // mix.sass('resources/sass/app.scss', 'public/css', {
 //     prependData: "$theme: " + process.env.MIX_APP_THEME + ";" + "$accent: " + process.env.MIX_APP_ACCENT + ";"
 // }).sass('resources/sass/signatures.scss', 'public/css', {

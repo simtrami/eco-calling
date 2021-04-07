@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'd-din-condensed';
+    src: url('../fonts/d-dincondensed-webfont.woff2') format('woff2'),
+    url('../fonts/d-dincondensed-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,7 +36,7 @@
     }
 
     .collapsible {
-        @apply max-h-0 md:max-h-full;
+        @apply max-h-0 overflow-hidden md:max-h-full;
         transition: max-height 0.35s ease-out;
     }
 }

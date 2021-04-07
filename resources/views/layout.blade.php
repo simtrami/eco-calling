@@ -30,14 +30,14 @@
     @yield('stylesheets')
 </head>
 
-<body>
-<div class="fixed top-0 right-0 left-0 z-50 bg-white">
+<body class="font-body">
+<div class="fixed top-0 right-0 left-0 z-50 bg-white shadow-md">
     <x-nav></x-nav>
 </div>
 
 @yield('content')
 
-<footer>
+{{--<footer>
     <div class="container">
         <p>{{ env('OUR_NAME') }}</p>
         <div class="content-footer">
@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer>--}}
 
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')

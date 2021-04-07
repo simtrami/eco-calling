@@ -11,8 +11,6 @@ const toggleNavCollapse = function () {
     }
 };
 
-window.onload = function () {
-    navToggler.addEventListener("click", function () {
-        toggleNavCollapse();
-    });
-};
+navToggler.addEventListener('click', function () {
+    toggleNavCollapse();
+});

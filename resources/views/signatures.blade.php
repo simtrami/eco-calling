@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('stylesheets')
-    <link href="{{ mix('css/signatures.css') }}" rel="stylesheet">
+{{--    <link href="{{ mix('css/signatures.css') }}" rel="stylesheet">--}}
 @endsection
 
 @section('content')

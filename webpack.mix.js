@@ -12,11 +12,14 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js');
-mix.sass('resources/sass/app.scss', 'public/css', {
-    prependData: "$theme: " + process.env.MIX_APP_THEME + ";" + "$accent: " + process.env.MIX_APP_ACCENT + ";"
-}).sass('resources/sass/signatures.scss', 'public/css', {
-    prependData: "$theme: " + process.env.MIX_APP_THEME + ";" + "$accent: " + process.env.MIX_APP_ACCENT + ";"
-});
+// mix.sass('resources/sass/app.scss', 'public/css', {
+//     prependData: "$theme: " + process.env.MIX_APP_THEME + ";" + "$accent: " + process.env.MIX_APP_ACCENT + ";"
+// }).sass('resources/sass/signatures.scss', 'public/css', {
+//     prependData: "$theme: " + process.env.MIX_APP_THEME + ";" + "$accent: " + process.env.MIX_APP_ACCENT + ";"
+// });
+mix.postCss('resources/css/app.css', 'public/css', [
+    require('tailwindcss'),
+]);
 
 mix.sourceMaps();
 

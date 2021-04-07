@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class RegisterButton extends Component
+class SignButton extends Component
 {
     /**
      * Create a new component instance.
@@ -24,6 +24,6 @@ class RegisterButton extends Component
      */
     public function render()
     {
-        return view('components.register-button');
+        return view('components.sign-button');
     }
 }

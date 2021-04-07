@@ -1,8 +1,18 @@
-import '../sass/app.scss';
+// Toggle nav (viewport <= sm)
 
-// require('./bootstrap');
-import 'bootstrap';
+const navToggler = document.getElementById('nav-toggler');
+const navCollapse = document.getElementById('nav-collapse');
+
+const toggleNavCollapse = function () {
+    if (navCollapse.style.maxHeight) {
+        navCollapse.style.maxHeight = null;
+    } else {
+        navCollapse.style.maxHeight = navCollapse.scrollHeight + "px";
+    }
+};
 
 window.onload = function () {
-    console.log('toto');
-}
+    navToggler.addEventListener("click", function () {
+        toggleNavCollapse();
+    });
+};

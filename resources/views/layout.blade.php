@@ -28,16 +28,12 @@
 
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     @yield('stylesheets')
-
 </head>
 
 <body>
-<div class="fixed-top">
+<div class="fixed top-0 right-0 left-0 z-50 bg-white">
     <x-nav></x-nav>
 </div>
-
-<!-- Spacer -->
-<div class="mt-4"></div>
 
 @yield('content')
 

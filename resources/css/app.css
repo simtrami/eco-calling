@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply inline-block font-normal text-center select-none border border-solid border-transparent py-1.5 px-3
+        leading-normal transition focus:ring focus:ring-offset-1 focus:ring-theme focus:ring-opacity-50;
+    }
+
+    .btn-outline-success {
+        @apply rounded-full border-theme bg-theme text-white font-body hover:bg-white hover:text-theme;
+    }
+}
+
+@layer utilities {
+    .flex-100 {
+        @apply flex-grow flex-shrink;
+        flex-basis: 100%;
+    }
+
+    .active {
+        @apply underline hover:no-underline md:text-theme-dark;
+    }
+
+    .inactive {
+        @apply no-underline hover:underline;
+    }
+
+    .collapsible {
+        @apply max-h-0 md:max-h-full;
+        transition: max-height 0.35s ease-out;
+    }
+}

@@ -31,9 +31,8 @@
 </head>
 
 <body class="font-body">
-<div class="fixed top-0 right-0 left-0 z-50 bg-white shadow-md">
-    <x-nav></x-nav>
-</div>
+
+<x-nav></x-nav>
 
 @yield('content')
 

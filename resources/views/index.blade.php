@@ -143,9 +143,9 @@
             </div>
         </div>
 
-        {{--
         <x-motivation></x-motivation>
 
+        {{--
         <div class="signing-form" id="form">
             <div class="container">
                 <div class="header">
@@ -157,12 +157,8 @@
                 </div>
             </div>
         </div>
+        --}}
 
         <x-sponsors></x-sponsors>
-        --}}
     </main>
-@endsection
-
-@section('scripts')
-    <script src="{{ mix('js/index.js') }}"></script>
 @endsection

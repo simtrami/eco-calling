@@ -55,7 +55,7 @@
             <p class="after-table">Want to be a part of it?<br>It's this way 👇</p>
             <div class="button-register mt-3">
                 <a href="{{ route('home') }}#form">
-                    <div class="btn btn-outline-success my-2 px-3">@lang('form.submit')</div>
+                    <div class="btn btn-sign my-2 px-3">@lang('form.submit')</div>
                 </a>
             </div>
 

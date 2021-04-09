@@ -12,12 +12,8 @@
 
 @layer components {
     .btn {
-        @apply inline-block font-normal text-center select-none border border-solid border-transparent py-1.5 px-3
-        leading-normal transition focus:ring focus:ring-offset-1 focus:ring-theme focus:ring-opacity-50;
-    }
-
-    .btn-outline-success {
-        @apply rounded-full border-theme bg-theme text-white font-body hover:bg-white hover:text-theme;
+        @apply inline-block text-center select-none border border-solid border-transparent rounded-md
+        leading-normal transition focus:outline-none focus:ring focus:ring-offset-1 focus:ring-opacity-50 py-1.5 px-3;
     }
 }
 

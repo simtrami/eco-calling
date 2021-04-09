@@ -12,16 +12,19 @@
 
 @section('content')
     {{--TODO--}}
-    {{--@if ($errors->any())
-        <div class="alert alert-danger d-flex mt-4">
-            @lang('form.failure')
-            <div class="flex-fill"></div>
-            <a class="btn btn-sm btn-outline-danger" href="#form">@lang('form.correct')</a>
+    @if ($errors->any())
+        <div class="w-full flex justify-between items-center space-x-2 fixed top-[56px] bg-red-200 text-red-500 z-10 p-4
+        md:top-[72px] md:px-4">
+            <div><p>@lang('form.failure')</p></div>
+            <button id="fix-form-btn"
+                    class="btn bg-red-500 text-sm text-white hover:bg-transparent hover:border-red-500
+                    hover:text-red-500 focus:ring-red-500 md:text-base">@lang('form.correct')</button>
         </div>
     @endif
+    {{--TODO--}}
     @if (session('success'))
         <x-success></x-success>
-    @endif--}}
+    @endif
 
     <main role="main">
         <div class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]" id="home">

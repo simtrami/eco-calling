@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="button-register">
-            <button class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit">@lang('form.submit')</button>
+            <button class="btn btn-sign my-2 my-sm-0 nav-link" type="submit">@lang('form.submit')</button>
         </div>
     </div>
 </form>

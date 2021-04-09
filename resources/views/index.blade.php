@@ -20,7 +20,7 @@
     @endif--}}
 
     <main role="main">
-        <div class="h-screen w-full min-h-132 2xl:min-h-194" id="home">
+        <div class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]" id="home">
             <div class="font-title font-bold relative top-1/3 px-4 mx-auto
                 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl xl:top-1/4">
                 <h1 class="text-theme-dark text-5xl leading-snug md:text-6xl lg:text-7xl">
@@ -56,29 +56,21 @@
                 </div>
                 <hr class="border-theme opacity-30 w-full my-4"/>
                 <div class="px-2.5 my-3 mx-0">
-                    <a class="hover:text-theme-dark" href="{{ env('LINK_POST_FB') }}" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 320 512"
-                             fill="currentColor">
-                            <path
-                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
-                        </svg>
+                    <a class="hover:text-theme-dark" href="{{ env('LINK_POST_FB') }}" target="_blank"
+                       title="Share on Facebook">
+                        <x-icons.facebook></x-icons.facebook>
                     </a>
                 </div>
                 <div class="px-2.5 my-3 mx-0">
-                    <a class="hover:text-theme-dark" href="{{ env('LINK_POST_TW') }}" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path
-                                d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
-                        </svg>
+                    <a class="hover:text-theme-dark" href="{{ env('LINK_POST_TW') }}" target="_blank"
+                       title="Share on Twitter">
+                        <x-icons.twitter></x-icons.twitter>
                     </a>
                 </div>
                 <div class="px-2.5 my-3 mx-0">
-                    <a class="hover:text-theme-dark" href="{{ env('LINK_POST_LIN') }}" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 448 512"
-                             fill="currentColor">
-                            <path
-                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                        </svg>
+                    <a class="hover:text-theme-dark" href="{{ env('LINK_POST_LIN') }}" target="_blank"
+                       title="Share on LinkedIn">
+                        <x-icons.linkedin></x-icons.linkedin>
                     </a>
                 </div>
             </div>

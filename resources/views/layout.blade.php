@@ -37,31 +37,7 @@
 
 @yield('content')
 
-{{--<footer>
-    <div class="container">
-        <p>{{ env('OUR_NAME') }}</p>
-        <div class="content-footer">
-            <div class="content-footer__row">
-                <div class="footer-socials">
-                    <a href="{{ env('LINK_FACEBOOK') }}" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="{{ env('LINK_TWITTER') }}" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="{{ env('LINK_LINKEDIN') }}" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-                <a href="{{ env('LINK_ABOUT_US') }}" target="_blank">@lang('footer.about')</a>
-            </div>
-            <div class="content-footer__row">
-                <a href="mailto:{{ env('MAIL_REPLY_TO_ADDRESS') }}">{{ env('MAIL_REPLY_TO_ADDRESS') }}</a>
-                <a href="{{ env('LINK_PRIVACY') }}" target="_blank">@lang('footer.privacy')</a>
-            </div>
-        </div>
-    </div>
-</footer>--}}
+<x-footer></x-footer>
 
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')

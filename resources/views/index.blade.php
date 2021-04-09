@@ -46,7 +46,7 @@
         </div>
 
         <div id="manifesto" class="md:text-lg mb-12">
-            <div id="manifesto-anchor" class="bg-theme text-white py-10 px-4 md:px-20 lg:px-0">
+            <div class="bg-theme text-white py-10 px-4 md:px-20 lg:px-0">
                 <p class="mx-auto max-w-4xl">
                     Sunt amores manifestum audax, neuter acipenseres.
                     Going to the mind doesn’t hurt joy anymore than

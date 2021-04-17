@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="flex flex-row justify-center space-x-2 uppercase text-theme text-sm mt-6">
-            <p>Made by <a class="font-semibold hover:animate-pulse"
+            <p>Made by <a class="font-semibold hover:animate-pulse" target="_blank"
                           href="{{ env('APP_AUTHOR_URL') }}">{{ env('APP_AUTHOR') }}</a> with</p>
             <a class="hover:animate-pulse" href="https://tailwindcss.com" target="_blank" title="TailwindCSS">
                 <svg class="h-5 w-5" viewBox="0 0 30 18" fill="currentColor">

@@ -25,7 +25,8 @@
     @endif
 
     <main role="main">
-        <div class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]" id="home">
+        <!-- Jumbotron -->
+        <div id="home" class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]">
             <div class="font-title font-bold relative top-1/3 px-4 mx-auto
                 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl xl:top-1/4">
                 <h1 class="text-theme-dark text-5xl leading-snug md:text-6xl lg:text-7xl">
@@ -46,7 +47,8 @@
             </div>
         </div>
 
-        <div id="manifesto" class="md:text-lg mb-12">
+        <div id="manifesto" class="w-full mb-12 md:text-lg">
+            <!-- Headline -->
             <div class="bg-theme text-white py-10 px-4 md:px-20 lg:px-0">
                 <p class="mx-auto max-w-4xl">
                     Sunt amores manifestum audax, neuter acipenseres.
@@ -54,6 +56,7 @@
                     inventing creates outer stigma. Why does the ferengi warp?
                 </p>
             </div>
+            <!-- Socials -->
             <div class="text-theme flex-col sticky top-40 ml-4 mt-4 p-0 text-center hidden md:inline-flex">
                 <div class="opacity-30 px-2.5 my-3 mx-0">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -81,6 +84,7 @@
                     </a>
                 </div>
             </div>
+            <!-- Manifesto -->
             <div class="px-4 mt-12 md:-mt-44 md:pr-8 md:pl-20 lg:px-0">
                 <div class="mx-auto max-w-4xl">
                     <p class="mt-5">

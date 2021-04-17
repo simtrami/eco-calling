@@ -30,7 +30,7 @@
     @yield('stylesheets')
 </head>
 
-<body class="font-body">
+<body class="font-body text-gray-800">
 
 <x-nav></x-nav>
 

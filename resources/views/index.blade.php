@@ -148,19 +148,19 @@
 
         <x-motivation></x-motivation>
 
-        {{--
-        <div class="signing-form" id="form">
-            <div class="container">
-                <div class="header">
-                    <h2>Sign</h2>
-                    <p>Already <span class="background-signature">{{ $count }} people signed</span></p>
+        <!-- Form -->
+        <div id="form"
+             class="w-full flex items-center min-h-[calc(100vh-56px)] py-8 px-4 md:min-h-[calc(100vh-72px)] md:px-20 lg:px-0">
+            <div class="mx-auto max-w-4xl">
+                <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-baseline">
+                    <h2 class="text-theme-dark font-title text-3xl font-bold md:text-4xl">Sign</h2>
+                    <p class="text-xl">
+                        Already <span class="bg-theme text-white p-1">{{ $count }} people signed</span>!
+                    </p>
                 </div>
-                <div class="row">
-                    <x-form></x-form>
-                </div>
+                <x-form></x-form>
             </div>
         </div>
-        --}}
 
         <x-sponsors></x-sponsors>
     </main>

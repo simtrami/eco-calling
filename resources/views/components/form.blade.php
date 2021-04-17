@@ -1,44 +1,49 @@
-<form method="POST" action="{{ route('sign') }}">
+<form method="POST" action="{{ route('sign') }}" class="grid grid-cols-1 gap-6 md:grid-cols-2 mt-10">
     @csrf
-    <div class="form-register">
-        <div class="d-flex flex-wrap">
-            <div class="col-sm-12 col-md-6 input-form">
-                <label for="firstName">@lang('form.first_name')</label>
-                <input type="text" name="first_name" id="firstName" placeholder="Jane"
-                       class="form-control @error('first_name')is-invalid @enderror">
-                @error('first_name')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="col-sm-12 col-md-6 input-form">
-                <label for="lastName">@lang('form.last_name')</label>
-                <input type="text" name="last_name" id="lastName" placeholder="Doe"
-                       class="form-control @error('last_name')is-invalid @enderror">
-                @error('last_name')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="col-sm-12 input-form mt-5">
-                <label for="email">@lang('form.email')</label>
-                <input type="email" name="email" id="email" placeholder="jeanne.doe@ecolo.gy"
-                       class="form-control @error('email')is-invalid @enderror">
-                @error('email')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="col-sm-12 form-group">
-                <div class="register-checkbox form-check">
-                    <input type="checkbox" id="register-checkbox" name="register"
-                           class="form-check-input @error('register')is-invalid @enderror">
-                    <label class="form-check-label" for="register-checkbox">@lang('form.accept')</label>
-                    @error('register')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
+    <div>
+        <label for="firstName" class="text-sm font-medium text-theme-dark">@lang('form.first_name')</label>
+        <div class="mt-1">
+            <input type="text" name="first_name" id="firstName" placeholder="Jane"
+                   class="@error('first_name') border-red-600 focus:border-red-500 @enderror">
+            @error('first_name')
+            <div class="text-xs text-red-500">{{ $message }}</div>
+            @enderror
         </div>
-        <div class="button-register">
-            <button class="btn btn-sign my-2 my-sm-0 nav-link" type="submit">@lang('form.submit')</button>
+    </div>
+    <div>
+        <label for="lastName" class="text-sm font-medium text-theme-dark">@lang('form.last_name')</label>
+        <div class="mt-1">
+            <input type="text" name="last_name" id="lastName" placeholder="Doe"
+                   class="@error('last_name') border-red-600 focus:border-red-500 @enderror">
+            @error('last_name')
+            <div class="text-xs text-red-500">{{ $message }}</div>
+            @enderror
         </div>
+    </div>
+    <div class="md:col-span-2">
+        <label for="email" class="text-sm font-medium text-theme-dark">@lang('form.email')</label>
+        <div class="mt-1">
+            <input type="email" name="email" id="email" placeholder="jeanne.doe@ecolo.gy"
+                   class="@error('email') border-red-600 focus:border-red-500 @enderror">
+            @error('email')
+            <div class="text-xs text-red-500">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <div class="md:col-span-2">
+        <div class="flex items-start">
+            <input type="checkbox" id="register-checkbox" name="register"
+                   class="mt-1 @error('register') border-red-600 focus:border-red-500 focus:ring-red-500 @enderror">
+            <label for="register-checkbox"
+                   class="text-sm text-theme-dark text-justify block ml-2">@lang('form.accept')</label>
+        </div>
+        @error('register')
+        <div class="text-xs text-red-500">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="md:col-span-2">
+        <button class="btn w-full rounded-full border-theme bg-theme text-white px-4 hover:bg-white hover:text-theme
+    focus:ring-theme md:w-auto md:px-8 md:text-base md:h-auto md:block md:mx-auto"
+                type="submit">@lang('form.submit')</button>
     </div>
 </form>

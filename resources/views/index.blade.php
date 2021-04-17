@@ -11,13 +11,11 @@
 @endsection
 
 @section('content')
-    {{--TODO--}}
     @if ($errors->any())
-        <div class="w-full flex justify-between items-center space-x-2 fixed top-[56px] bg-red-200 text-red-500 z-10 p-4
+        <div id="error-alert" class="w-full flex justify-between items-center space-x-2 fixed top-[56px] bg-red-200 text-red-500 z-10 p-4
         md:top-[72px] md:px-4">
             <div><p>@lang('form.failure')</p></div>
-            <button id="fix-form-btn"
-                    class="btn bg-red-500 text-sm text-white hover:bg-transparent hover:border-red-500
+            <button onclick="scrollToForm()" class="btn bg-red-500 text-sm text-white hover:bg-transparent hover:border-red-500
                     hover:text-red-500 focus:ring-red-500 md:text-base">@lang('form.correct')</button>
         </div>
     @endif
@@ -38,7 +36,7 @@
                 </p>
             </div>
             <div class="text-center text-accent flex justify-center relative top-1/2 2xl:top-2/3">
-                <div id="go-to-manifesto-btn" class="cursor-pointer">
+                <div onclick="scrollToTargetAdjusted('manifesto')" class="cursor-pointer">
                     <p class="font-semibold lg:text-lg">Read our manifesto</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="animate-bounce h-6 w-6 mx-auto mt-4 lg:h-8 lg:w-8"
                          fill="none" viewBox="0 0 24 24" stroke="currentColor">

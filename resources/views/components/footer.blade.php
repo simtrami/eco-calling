@@ -3,15 +3,18 @@
         <p>{{ env('OUR_NAME') }}</p>
         <div class="my-8">
             <div class="flex flex-col space-y-6 md:flex-row md:justify-between md:space-y-0">
-                <div class="flex flex-row justify-center space-x-4">
-                    <a class="hover:text-gray-200" href="{{ env('LINK_FACEBOOK') }}" target="_blank" title="Facebook">
-                        <x-icons.facebook></x-icons.facebook>
+                <div class="flex flex-row justify-center space-x-8">
+                    <a class="transition transform motion-safe:hover:scale-125" href="{{ env('LINK_FACEBOOK') }}"
+                       target="_blank" title="Facebook">
+                        <x-icons.facebook class="h-6 w-6"/>
                     </a>
-                    <a class="hover:text-gray-200" href="{{ env('LINK_TWITTER') }}" target="_blank" title="Twitter">
-                        <x-icons.twitter></x-icons.twitter>
+                    <a class="transition transform motion-safe:hover:scale-125" href="{{ env('LINK_TWITTER') }}"
+                       target="_blank" title="Twitter">
+                        <x-icons.twitter class="h-6 w-6"/>
                     </a>
-                    <a class="hover:text-gray-200" href="{{ env('LINK_LINKEDIN') }}" target="_blank" title="LinkedIn">
-                        <x-icons.linkedin></x-icons.linkedin>
+                    <a class="transition transform motion-safe:hover:scale-125" href="{{ env('LINK_LINKEDIN') }}"
+                       target="_blank" title="LinkedIn">
+                        <x-icons.linkedin class="h-6 w-6"/>
                     </a>
                 </div>
                 <div class="md:text-right">

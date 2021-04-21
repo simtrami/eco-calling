@@ -68,19 +68,19 @@
                 <div class="px-2.5 my-3 mx-0">
                     <a class="hover:text-theme-dark" href="{{ env('LINK_POST_FB') }}" target="_blank"
                        title="Share on Facebook">
-                        <x-icons.facebook></x-icons.facebook>
+                        <x-icons.facebook class="h-5 w-5"/>
                     </a>
                 </div>
                 <div class="px-2.5 my-3 mx-0">
                     <a class="hover:text-theme-dark" href="{{ env('LINK_POST_TW') }}" target="_blank"
                        title="Share on Twitter">
-                        <x-icons.twitter></x-icons.twitter>
+                        <x-icons.twitter class="h-5 w-5"/>
                     </a>
                 </div>
                 <div class="px-2.5 my-3 mx-0">
                     <a class="hover:text-theme-dark" href="{{ env('LINK_POST_LIN') }}" target="_blank"
                        title="Share on LinkedIn">
-                        <x-icons.linkedin></x-icons.linkedin>
+                        <x-icons.linkedin class="h-5 w-5"/>
                     </a>
                 </div>
             </div>

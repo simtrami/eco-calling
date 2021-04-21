@@ -12,11 +12,13 @@
 
 @section('content')
     @if ($errors->any())
-        <div id="error-alert" class="w-full flex justify-between items-center space-x-2 fixed top-[56px] bg-red-200 text-red-500 z-10 p-4
-        md:top-[72px] md:px-4">
+        <div
+            class="w-full flex justify-between items-center space-x-2 fixed top-[56px] bg-red-200 text-red-500 z-10 p-4 md:top-[72px] md:px-4"
+            id="error-alert">
             <div><p>@lang('form.failure')</p></div>
-            <button onclick="scrollToForm()" class="btn bg-red-500 text-sm text-white hover:bg-transparent hover:border-red-500
-                    hover:text-red-500 focus:ring-red-500 md:text-base">@lang('form.correct')</button>
+            <button
+                class="btn bg-red-500 text-sm text-white hover:bg-transparent hover:border-red-500 hover:text-red-500 focus:ring-red-500 md:text-base"
+                onclick="scrollToForm()">@lang('form.correct')</button>
         </div>
     @endif
     {{--TODO--}}
@@ -26,14 +28,13 @@
 
     <main role="main">
         <!-- Jumbotron -->
-        <div id="home" class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]">
-            <div class="font-title font-bold relative top-1/3 px-4 mx-auto
-                md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl xl:top-1/4">
-                <h1 class="text-theme-dark text-5xl leading-snug md:text-6xl lg:text-7xl">
-                    First title line,<br>
-                    and a second one
-                </h1>
-                <p class="text-2xl mt-4">Already <span class="bg-theme text-white p-1">{{ $count }} people signed</span>!
+        <div class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]" id="home">
+            <div
+                class="font-title font-bold relative top-1/3 px-4 mx-auto md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl xl:top-1/4">
+                <h1 class="text-theme-dark text-5xl leading-snug md:text-6xl lg:text-7xl">First title line,<br>
+                    and a second one</h1>
+                <p class="text-2xl mt-4">
+                    Already <span class="bg-theme text-white p-1">{{ $count }} people signed</span>!
                 </p>
             </div>
             <div class="text-center text-accent flex justify-center relative top-1/2 2xl:top-2/3">
@@ -47,7 +48,7 @@
             </div>
         </div>
 
-        <div id="manifesto" class="w-full mb-12 md:text-lg">
+        <div class="w-full mb-12 md:text-lg" id="manifesto">
             <!-- Headline -->
             <div class="bg-theme text-white py-10 px-4 md:px-20 lg:px-0">
                 <p class="mx-auto max-w-4xl">
@@ -151,8 +152,9 @@
         <x-motivation></x-motivation>
 
         <!-- Form -->
-        <div id="form"
-             class="w-full flex items-center min-h-[calc(100vh-56px)] py-8 px-4 md:min-h-[calc(100vh-72px)] md:px-20 lg:px-0">
+        <div
+            class="w-full flex items-center min-h-[calc(100vh-56px)] py-8 px-4 md:min-h-[calc(100vh-72px)] md:px-20 lg:px-0"
+            id="form">
             <div class="mx-auto max-w-4xl">
                 <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-baseline">
                     <h2 class="text-theme-dark font-title text-3xl font-bold md:text-4xl">Sign</h2>

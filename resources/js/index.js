@@ -3,7 +3,9 @@
 * possible as an offset of the height of the nav must be added in order to look nice.
 * https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
 */
-window.scrollToTargetAdjusted = function (targetId, offset = 72) {
+window.scrollToTargetAdjusted = function (targetId, offset) {
+    // If unset, the offset is the height of the navbar.
+    if (!offset) offset = document.getElementById('nav').clientHeight;
     const elementPosition = document.getElementById(targetId).offsetTop;
     const offsetPosition = elementPosition - offset;
 

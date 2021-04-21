@@ -20,6 +20,7 @@ module.exports = {
         },
     },
     variants: {
+        animation: ['motion-safe'],
         extend: {
             animation: ['hover'],
         },

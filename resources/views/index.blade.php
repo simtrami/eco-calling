@@ -21,9 +21,8 @@
                 onclick="scrollToForm()">@lang('form.correct')</button>
         </div>
     @endif
-    {{--TODO--}}
     @if (session('success'))
-        <x-success></x-success>
+        <x-success/>
     @endif
 
     <main role="main">
@@ -149,7 +148,7 @@
             </div>
         </div>
 
-        <x-motivation></x-motivation>
+        <x-motivation/>
 
         <!-- Form -->
         <div
@@ -162,10 +161,10 @@
                         Already <span class="bg-theme text-white p-1">{{ $count }} people signed</span>!
                     </p>
                 </div>
-                <x-form></x-form>
+                <x-form/>
             </div>
         </div>
 
-        <x-sponsors></x-sponsors>
+        <x-sponsors/>
     </main>
 @endsection

@@ -39,7 +39,7 @@
 @layer components {
     .btn {
         @apply inline-block text-center select-none border border-solid border-transparent rounded-md
-        leading-normal transition focus:outline-none focus:ring focus:ring-offset-1 focus:ring-opacity-50 py-1.5 px-3;
+        leading-normal transition focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-current py-1.5 px-3;
     }
 }
 

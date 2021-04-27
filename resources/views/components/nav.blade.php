@@ -6,7 +6,7 @@
             <img class="h-11" src="{{ asset('src/images/logo.png') }}" alt="Logo"/>
         </a>
 
-        <x-sign-button class="md:hidden"></x-sign-button>
+        <x-inputs.sign-button class="md:hidden"/>
 
         <button class="mx-3 md:hidden" id="nav-toggler" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-theme" fill="none" viewBox="0 0 24 24"
@@ -21,18 +21,18 @@
             <ul class="font-medium flex flex-col list-none space-y-5 pl-0 py-6 mx-auto md:justify-end md:w-full md:flex-row md:-space-y-px md:space-x-9 md:mr-9 md:ml-0 md:my-0 md:py-0">
                 <li class="{{ Route::is('home') ? 'font-semibold' : '' }}">
                     <a class="hover:text-gray-200 md:hover:text-theme-dark"
-                       href="{{ route('home') }}">@lang('header.home')</a>
+                       href="{{ route('home') }}">{{ __('header.home') }}</a>
                 </li>
                 <li class="{{ Route::is('signatures') ? 'font-semibold' : '' }}">
                     <a class="hover:text-gray-200 md:hover:text-theme-dark"
-                       href="{{ route('signatures') }}">@lang('header.signatures')</a>
+                       href="{{ route('signatures') }}">{{ __('header.signatures') }}</a>
                 </li>
                 <li>
                     <a class="hover:text-gray-200 md:hover:text-theme-dark" href="{{ env('LINK_OFFICIAL_WEBSITE') }}"
-                       target="_blank">@lang('header.website')</a>
+                       target="_blank">{{ __('header.website') }}</a>
                 </li>
             </ul>
-            <x-sign-button class="hidden md:block"></x-sign-button>
+            <x-inputs.sign-button class="hidden md:block"/>
         </div>
     </nav>
 </div>

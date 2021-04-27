@@ -19,7 +19,7 @@
                 </div>
                 <div class="md:text-right">
                     <p><a class="font-semibold hover:text-gray-200" href="{{ env('LINK_ABOUT_US') }}"
-                          target="_blank">@lang('footer.about')</a></p>
+                          target="_blank">{{ __('footer.about') }}</a></p>
                 </div>
             </div>
             <div class="flex flex-col mt-4 space-y-4 md:flex-row md:justify-between md:space-y-0">
@@ -30,13 +30,14 @@
                 </div>
                 <div class="md:text-right">
                     <p><a class="font-semibold hover:text-gray-200" href="{{ env('LINK_PRIVACY') }}"
-                          target="_blank">@lang('footer.privacy')</a></p>
+                          target="_blank">{{ __('footer.privacy') }}</a></p>
                 </div>
             </div>
         </div>
         <div class="flex flex-row justify-center space-x-2 uppercase text-theme text-sm mt-6">
-            <p>Made by <a class="font-semibold hover:animate-pulse" target="_blank"
-                          href="{{ env('APP_AUTHOR_URL') }}">{{ env('APP_AUTHOR') }}</a> with</p>
+            <p>{{ __('footer.signature.who') }} <a class="font-semibold hover:animate-pulse" target="_blank"
+                                                   href="{{ env('APP_AUTHOR_URL') }}">{{ env('APP_AUTHOR') }}</a> {{ __('footer.signature.what') }}
+            </p>
             <a class="hover:animate-pulse" href="https://tailwindcss.com" target="_blank" title="TailwindCSS">
                 <svg class="h-5 w-5" viewBox="0 0 30 18" fill="currentColor">
                     <path

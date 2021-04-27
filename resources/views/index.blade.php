@@ -1,10 +1,6 @@
 @extends('layout')
 
-@section('stylesheets')
-    @if (session('success'))
-        <link href="{{ asset('src/css/success.css') }}" rel="stylesheet">
-    @endif
-@endsection
+@section('title'){{ __('index.page_title', ['app_title' => env('APP_TITLE')]) }}@endsection
 
 @section('scripts')
     <script src="{{ mix('js/index.js') }}"></script>
@@ -15,30 +11,27 @@
         <div
             class="w-full flex justify-between items-center space-x-2 fixed top-[56px] bg-red-200 text-red-500 z-10 p-4 md:top-[72px] md:px-4"
             id="error-alert">
-            <div><p>@lang('form.failure')</p></div>
+            <div><p>{{ __('form.failure') }}</p></div>
             <button
                 class="btn bg-red-500 text-sm text-white hover:bg-transparent hover:border-red-500 hover:text-red-500 focus:ring-red-500 md:text-base"
-                onclick="scrollToForm()">@lang('form.correct')</button>
+                onclick="scrollToForm()">{{ __('form.correct') }}</button>
         </div>
-    @endif
-    @if (session('success'))
-        <x-success/>
     @endif
 
     <main role="main">
         <!-- Jumbotron -->
-        <div class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]" id="home">
+        <div class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]" id="title">
             <div
                 class="font-title font-bold relative top-1/3 px-4 mx-auto md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl xl:top-1/4">
-                <h1 class="text-theme-dark text-5xl leading-snug md:text-6xl lg:text-7xl">First title line,<br>
-                    and a second one</h1>
+                <h1 class="text-theme-dark text-5xl leading-snug md:text-6xl lg:text-7xl">{!! __('index.title') !!}</h1>
                 <p class="text-2xl mt-4">
-                    Already <span class="bg-theme text-white p-1">{{ $count }} people signed</span>!
+                    {!! __('index.subtitle.already') !!} <span
+                        class="bg-theme text-white p-1">{!! __('index.subtitle.sign_count', ['count' => $count]) !!}</span>
                 </p>
             </div>
             <div class="text-center text-accent flex justify-center relative top-1/2 2xl:top-2/3">
                 <div onclick="scrollToTargetAdjusted('manifesto')" class="cursor-pointer">
-                    <p class="font-semibold lg:text-lg">Read our manifesto</p>
+                    <p class="font-semibold lg:text-lg">{{ __('index.start_reading') }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="animate-bounce h-6 w-6 mx-auto mt-4 lg:h-8 lg:w-8"
                          fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -67,19 +60,19 @@
                 <hr class="border-theme opacity-30 w-full my-4"/>
                 <div class="px-2.5 my-3 mx-0">
                     <a class="hover:text-theme-dark" href="{{ env('LINK_POST_FB') }}" target="_blank"
-                       title="Share on Facebook">
+                       title="{{ __('socials.facebook') }}">
                         <x-icons.facebook class="h-5 w-5"/>
                     </a>
                 </div>
                 <div class="px-2.5 my-3 mx-0">
                     <a class="hover:text-theme-dark" href="{{ env('LINK_POST_TW') }}" target="_blank"
-                       title="Share on Twitter">
+                       title="{{ __('socials.twitter') }}">
                         <x-icons.twitter class="h-5 w-5"/>
                     </a>
                 </div>
                 <div class="px-2.5 my-3 mx-0">
                     <a class="hover:text-theme-dark" href="{{ env('LINK_POST_LIN') }}" target="_blank"
-                       title="Share on LinkedIn">
+                       title="{{ __('socials.linkedin') }}">
                         <x-icons.linkedin class="h-5 w-5"/>
                     </a>
                 </div>
@@ -156,9 +149,10 @@
             id="form">
             <div class="mx-auto max-w-4xl">
                 <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-baseline">
-                    <h2 class="text-theme-dark font-title text-3xl font-bold md:text-4xl">Sign</h2>
+                    <h2 class="text-theme-dark font-title text-3xl font-bold md:text-4xl">{{ __('index.form_title') }}</h2>
                     <p class="text-xl">
-                        Already <span class="bg-theme text-white p-1">{{ $count }} people signed</span>!
+                        {{ __('index.subtitle.already') }} <span
+                            class="bg-theme text-white p-1">{!! __('index.subtitle.sign_count', ['count' => $count]) !!}</span>
                     </p>
                 </div>
                 <x-form/>

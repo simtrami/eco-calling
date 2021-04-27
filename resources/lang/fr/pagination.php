@@ -13,17 +13,17 @@ return [
     |
     */
 
-    'previous' => '&laquo; Previous',
-    'next' => 'Next &raquo;',
+    'previous' => '&laquo; Précédent',
+    'next' => 'Suivant &raquo;',
 
     /*
      * Lines for the pagination component
      */
 
-    'nav_label' => "Pagination Navigation",
-    'showing' => "Showing",
-    'to' => 'to',
-    'of' => 'of',
-    'results' => 'results',
-    'go_to' => 'Go to page :page',
+    'nav_label' => "Navigation par Pagination",
+    'showing' => "De",
+    'to' => 'à',
+    'of' => 'sur',
+    'results' => 'résultats',
+    'go_to' => 'Aller à la page :page',
 ];

@@ -1,68 +1,60 @@
 @extends('layout')
 
-@section('stylesheets')
-{{--    <link href="{{ mix('css/signatures.css') }}" rel="stylesheet">--}}
-@endsection
+@section('title'){{ __('signatures.page_title', ['app_title' => env('APP_TITLE')]) }}@endsection
 
 @section('content')
     <main role="main">
-        @if (session('success'))
-            <div class="alert alert-success d-flex mt-4">
-                {{ session('success') }}
+        <!-- Jumbotron -->
+        <div class="h-screen w-full min-h-[33rem] 2xl:min-h-[52rem]" id="title">
+            <div
+                class="font-title font-bold relative top-1/3 px-4 mx-auto md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl xl:top-1/4">
+                <h1 class="text-theme-dark text-4xl leading-snug sm:text-5xl md:text-6xl lg:text-7xl">{{ __('signatures.title.we') }}
+                    <span
+                        class="bg-theme text-white p-1">{!! __('signatures.title.count', ['count' => $count]) !!}</span><br>
+                    {{ __('signatures.title.who') }}</h1>
             </div>
-        @endif
-
-        <div class="page-title-section">
-            <div class="container mt-5">
-                <h1>All the <span class="background-signature">{{ $count }} people</span><br/>
-                    who support us
-                </h1>
-                <div class="button-find d-flex align-items_center justify-content-center">
-                    <a href="#signatures">
-                        <p>Meet the signatories</p>
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
+            <div class="text-center text-accent flex justify-center relative top-1/2 2xl:top-2/3">
+                <div onclick="scrollToTargetAdjusted('signatures')" class="cursor-pointer">
+                    <p class="font-semibold lg:text-lg">{{ __('signatures.go_to_table') }}</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="animate-bounce h-6 w-6 mx-auto mt-4 lg:h-8 lg:w-8"
+                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
                 </div>
             </div>
         </div>
 
-        <x-motivation></x-motivation>
+        <x-motivation/>
 
-        <div class="corpus" id="signatures">
-            <div class="container">
-                <h2>Look at all of us!</h2>
-                <table class="table table-sm table-hover">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @forelse ($signatures as $signature)
-                        <tr>
-                            <td>{{ $signature->full_name }}</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td>@lang('signatures.empty')</td>
-                        </tr>
-                    @endforelse
-                    </tbody>
-                </table>
-                <x-paginate page="{{ $page }}" last="{{ $last }}"></x-paginate>
+        <!-- Signatures -->
+        <div
+            class="w-full flex items-center min-h-[calc(100vh-56px)] py-8 px-4 md:min-h-[calc(100vh-72px)] md:px-20 lg:px-0"
+            id="signatures">
+            <div class="flex-grow mx-auto max-w-4xl">
+                <div>
+                    <h2 class="text-theme-dark font-title text-3xl font-bold mb-6 md:text-4xl">{{ __('signatures.table.title') }}</h2>
+                </div>
+
+                <x-table :columns="[__('signatures.table.columns.names') => 'full_name']"
+                         :elements="$signatures">{{ __('signatures.table.empty') }}</x-table>
+
+                {{ $signatures->onEachSide(0)->links() }}
             </div>
-
-            <p class="after-table">Want to be a part of it?<br>It's this way 👇</p>
-            <div class="button-register mt-3">
-                <a href="{{ route('home') }}#form">
-                    <div class="btn btn-sign my-2 px-3">@lang('form.submit')</div>
-                </a>
-            </div>
-
-            <x-sponsors></x-sponsors>
         </div>
-    </main>
-@endsection
 
-@section('scripts')
+        <div class="bg-theme text-white py-10 px-4 md:px-20 lg:px-0">
+            <div class="mx-auto max-w-4xl">
+                <p class="text-center font-medium mb-6">
+                    {!! __('signatures.go_to_form') !!}
+                </p>
+                <div class="flex mx-auto justify-center text-center">
+                    <a
+                        class="btn rounded-full border-white bg-white text-theme px-4 hover:bg-theme hover:text-white focus:ring-white"
+                        href="{{ route('home') }}#form">{{ __('form.submit') }}</a>
+                </div>
+            </div>
+        </div>
+
+        <x-sponsors/>
+    </main>
 @endsection

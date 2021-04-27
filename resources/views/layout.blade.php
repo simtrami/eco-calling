@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{{ asset('src/images/favicon.png') }}"/>
-    <title>{{ env('APP_TITLE') }}</title>
+
+    <title>@yield('title', env('APP_TITLE'))</title>
 
     <link rel="canonical" href="{{ env('APP_URL') }}">
 
@@ -32,11 +33,15 @@
 
 <body class="font-body text-gray-800">
 
-<x-nav></x-nav>
+<x-nav/>
+
+@if (session('success'))
+    <x-success/>
+@endif
 
 @yield('content')
 
-<x-footer></x-footer>
+<x-footer/>
 
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')

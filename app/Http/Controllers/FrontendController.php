@@ -36,19 +36,16 @@ class FrontendController extends Controller
      */
     public function signatures(Request $request)
     {
-        $page = $request->get('page') > 0 ? $request->get('page') : 1;
-        $perPage = $request->get('perPage') > 0 ? $request->get('perPage') : 15;
-        $nbConfirmed = Signature::confirmed()->count();
-        $last = floor($nbConfirmed / $perPage);
-        $last !== 0 ?: $last++;
-
-        $signatures = Signature::confirmed()->paginate($perPage);
+        $signatures = Signature::confirmed()->paginate(
+            $request->get('perPage') ?? 10,
+            ['first_name', 'last_name'],
+            'page',
+            $request->get('page')
+        );
 
         return view('signatures', [
             'signatures' => $signatures,
             'count' => Signature::count(),
-            'page' => $page,
-            'last' => $last,
         ]);
     }
 

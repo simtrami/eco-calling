@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Signature;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SignatureFactory extends Factory
@@ -19,7 +20,7 @@ class SignatureFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         $email = $this->faker->unique()->email;
         return [
@@ -27,5 +28,19 @@ class SignatureFactory extends Factory
             'last_name' => $this->faker->lastName,
             'email' => $email,
         ];
+    }
+
+    /**
+     * Indicate that the signature's email has been verified
+     *
+     * @return SignatureFactory
+     */
+    public function confirmed(): SignatureFactory
+    {
+        return $this->state(function () {
+            return [
+                'email_verified_at' => Carbon::Now(),
+            ];
+        });
     }
 }

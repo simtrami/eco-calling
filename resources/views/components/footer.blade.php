@@ -1,18 +1,27 @@
 <footer class="w-full bg-theme-dark text-white py-10 px-4 md:px-20 lg:px-0">
     <div class="mx-auto max-w-4xl">
-        <div class="flex flex-col-reverse space-y-2 md:flex-row md:justify-between md:space-y-0">
+        <div
+            class="flex flex-col-reverse items-center space-y-4 space-y-reverse md:flex-row md:justify-between md:space-y-0">
             <div>
                 <p>{{ env('OUR_NAME') }}</p>
             </div>
             <nav class="space-x-2 text-xl sm:text-2xl" aria-label="{{ __('footer.select_languages') }}">
                 <a
                     class="inline-block transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
+                    @if(LaravelLocalization::getCurrentLocaleName() === 'en')
                     href="{{ LaravelLocalization::getLocalizedURL('fr') }}"
-                    title="Passer en {{ LaravelLocalization::getSupportedLocales()['fr']['native'] }}">🇫🇷</a>
-                <a
-                    class="inline-block transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
+                    title="Passer en {{ LaravelLocalization::getSupportedLocales()['fr']['native'] }}"
+                    @else
                     href="{{ LaravelLocalization::getLocalizedURL('en') }}"
-                    title="Switch to {{ LaravelLocalization::getSupportedLocales()['en']['native'] }}">🇬🇧</a>
+                    title="Switch to {{ LaravelLocalization::getSupportedLocales()['en']['native'] }}"
+                    @endif
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                    </svg>
+                </a>
             </nav>
         </div>
         <div class="my-8">

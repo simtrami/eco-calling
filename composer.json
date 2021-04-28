@@ -17,7 +17,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "mcamara/laravel-localization": "^1.6"
+        "mcamara/laravel-localization": "^1.6",
+        "spatie/laravel-sitemap": "^5.9"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",

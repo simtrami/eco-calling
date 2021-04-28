@@ -88,11 +88,12 @@ class Kernel extends HttpKernel
         'signed' => ValidateSignature::class,
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
-        // Mcamara/laravel-localization
+        //> Mcamara/laravel-localization
         'localize' => LaravelLocalizationRoutes::class,
         'localizationRedirect' => LaravelLocalizationRedirectFilter::class,
         'localeSessionRedirect' => LocaleSessionRedirect::class,
         'localeCookieRedirect' => LocaleCookieRedirect::class,
         'localeViewPath' => LaravelLocalizationViewPath::class
+        //< Mcamara/laravel-localization
     ];
 }

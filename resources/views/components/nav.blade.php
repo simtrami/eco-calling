@@ -20,18 +20,25 @@
             class="collapsible bg-theme text-white text-center flex-100 md:flex md:flex-auto md:items-center md:text-left md:bg-transparent md:text-theme"
             id="nav-collapse">
             <ul class="font-medium flex flex-col list-none space-y-5 pl-0 py-6 mx-auto md:justify-end md:w-full md:flex-row md:-space-y-px md:space-x-9 md:mr-9 md:ml-0 md:my-0 md:py-0">
-                <li class="{{ Route::is('home') ? 'font-semibold' : '' }}">
+                <li class="{{ Route::is('home') ? 'font-bold' : '' }}">
                     <a class="hover:text-gray-200 focus:outline-none focus:underline md:hover:text-theme-dark"
                        href="{{ route('home') }}">{{ __('header.home') }}</a>
                 </li>
-                <li class="{{ Route::is('signatures') ? 'font-semibold' : '' }}">
+                <li class="{{ Route::is('signatures') ? 'font-bold' : '' }}">
                     <a class="hover:text-gray-200 focus:outline-none focus:underline md:hover:text-theme-dark"
                        href="{{ route('signatures') }}">{{ __('header.signatures') }}</a>
                 </li>
                 <li>
-                    <a class="hover:text-gray-200 focus:outline-none focus:underline md:hover:text-theme-dark"
+                    <a class="inline-flex items-center space-x-1 hover:text-gray-200 focus:outline-none focus:underline md:hover:text-theme-dark"
                        href="{{ env('LINK_OFFICIAL_WEBSITE') }}"
-                       target="_blank">{{ __('header.website') }}</a>
+                       target="_blank">
+                        <span>{{ __('header.website') }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
                 </li>
             </ul>
             <x-inputs.sign-button class="hidden md:block"/>

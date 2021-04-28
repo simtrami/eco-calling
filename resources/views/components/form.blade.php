@@ -42,8 +42,8 @@
         @enderror
     </div>
     <div class="md:col-span-2">
-        <button class="btn w-full rounded-full border-theme bg-theme text-white px-4 hover:bg-white hover:text-theme
-    focus:ring-theme md:w-auto md:px-8 md:text-base md:h-auto md:block md:mx-auto"
-                type="submit">{{ __('form.submit') }}</button>
+        <button
+            class="btn w-full rounded-full border-theme bg-theme text-white px-4 hover:bg-white hover:text-theme focus:ring-theme md:w-auto md:px-8 md:text-base md:h-auto md:block md:mx-auto"
+            type="submit">{{ __('form.submit') }}</button>
     </div>
 </form>

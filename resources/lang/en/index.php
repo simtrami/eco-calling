@@ -8,5 +8,5 @@ return [
         'sign_count' => ":count people signed!",
     ],
     'start_reading' => 'Read our manifesto',
-    'form_title' => 'Sign',
+    'form_title' => 'Sign the manifesto',
 ];

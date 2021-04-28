@@ -8,7 +8,8 @@
 
         <x-inputs.sign-button class="md:hidden"/>
 
-        <button class="mx-3 md:hidden" id="nav-toggler" type="button">
+        <button class="transition duration-300 ease-out transform focus:outline-none focus:rotate-180 mx-3 md:hidden"
+                id="nav-toggler" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-theme" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>

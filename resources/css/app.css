@@ -26,8 +26,8 @@
     [multiple],
     textarea,
     select {
-        @apply w-full border-gray-400 rounded-md border-0 border-b focus:border-theme focus:ring-0 focus:shadow
-        transition;
+        @apply w-full border-gray-400 rounded-md border-0 border-b shadow-sm focus:border-theme focus:ring-0
+        focus:shadow-lg transition;
     }
 
     [type='checkbox'],

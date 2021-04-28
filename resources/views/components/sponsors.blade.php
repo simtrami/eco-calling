@@ -4,40 +4,40 @@
         <div>
             <div class="grid gap-2 grid-cols-3 sm:grid-cols-4">
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
                 <div>
-                    <img src="{{ asset('src/images/sponsors/sponsor.png') }}" alt="sponsor">
+                    <img src="{{ asset('images/sponsors/sponsor.png') }}" alt="sponsor">
                 </div>
             </div>
         </div>

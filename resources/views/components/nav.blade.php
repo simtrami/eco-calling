@@ -3,7 +3,7 @@
         class="p-0 flex flex-wrap items-center justify-between md:flex-row md:flex-nowrap md:justify-start md:py-2 md:px-4"
         id="nav">
         <a class="inline-block py-1.5 mr-4 text-xl whitespace-nowrap" href="{{ route('home') }}">
-            <img class="h-11" src="{{ asset('src/images/logo.png') }}" alt="Logo"/>
+            <img class="h-11" src="{{ asset('images/logo.png') }}" alt="Logo"/>
         </a>
 
         <x-inputs.sign-button class="md:hidden"/>

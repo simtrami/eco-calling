@@ -17,5 +17,5 @@ return [
     'submit' => "SIGN",
     'success' => "Thank you for signing! A validation email is coming your way. Please confirm your email address in order to have your name displayed on the signatories list.",
     'failure' => "Your signature was not registered as there were errors in the form.",
-    'correct' => 'Fix it',
+    'fix' => 'Fix it',
 ];

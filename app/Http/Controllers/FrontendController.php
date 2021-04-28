@@ -61,7 +61,7 @@ class FrontendController extends Controller
 
         event(new Signed($signature)); // Initiate the verification procedure
 
-        return redirect('/')->with('success', Lang::get('form.success'));
+        return redirect()->route('home')->with('success', Lang::get('form.success'));
     }
 
     /**
@@ -74,6 +74,6 @@ class FrontendController extends Controller
     {
         $request->fulfill();
 
-        return redirect('/signatures')->with('success', Lang::get('verify.success'));
+        return redirect()->route('signatures')->with('success', Lang::get('verify.success'));
     }
 }

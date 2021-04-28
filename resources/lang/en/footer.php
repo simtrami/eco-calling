@@ -7,4 +7,5 @@ return [
         'who' => 'Made by',
         'what' => 'with'
     ],
+    'select_languages' => 'Change the site language',
 ];

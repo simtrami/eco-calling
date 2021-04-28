@@ -7,4 +7,8 @@ return [
         'who' => 'Conçu par',
         'what' => 'avec'
     ],
+    'languages' => [
+        'label' => 'Changer la langue du site',
+        'link' => 'Passer en :locale',
+    ],
 ];

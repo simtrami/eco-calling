@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{{ asset('src/images/favicon.png') }}"/>
-    <title>{{ env('APP_TITLE') }}</title>
+    <link rel="icon" href="{{ asset('images/favicon.png') }}"/>
+
+    <title>@yield('title', env('APP_TITLE'))</title>
 
     <link rel="canonical" href="{{ env('APP_URL') }}">
 
@@ -28,44 +29,19 @@
 
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     @yield('stylesheets')
-
 </head>
 
-<body>
-<div class="fixed-top">
-    <x-nav></x-nav>
-</div>
+<body class="font-body text-gray-800">
 
-<!-- Spacer -->
-<div class="mt-4"></div>
+<x-nav/>
+
+@if (session('success'))
+    <x-success/>
+@endif
 
 @yield('content')
 
-<footer>
-    <div class="container">
-        <p>{{ env('OUR_NAME') }}</p>
-        <div class="content-footer">
-            <div class="content-footer__row">
-                <div class="footer-socials">
-                    <a href="{{ env('LINK_FACEBOOK') }}" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="{{ env('LINK_TWITTER') }}" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="{{ env('LINK_LINKEDIN') }}" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-                <a href="{{ env('LINK_ABOUT_US') }}" target="_blank">@lang('footer.about')</a>
-            </div>
-            <div class="content-footer__row">
-                <a href="mailto:{{ env('MAIL_REPLY_TO_ADDRESS') }}">{{ env('MAIL_REPLY_TO_ADDRESS') }}</a>
-                <a href="{{ env('LINK_PRIVACY') }}" target="_blank">@lang('footer.privacy')</a>
-            </div>
-        </div>
-    </div>
-</footer>
+<x-footer/>
 
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')

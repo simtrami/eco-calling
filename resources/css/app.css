@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'd-din-condensed';
+        src: url('../fonts/d-dincondensed-webfont.woff2') format('woff2'),
+        url('../fonts/d-dincondensed-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply w-full border-gray-400 rounded-md border-0 border-b shadow-sm focus:border-theme focus:ring-0
+        focus:shadow-lg transition;
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+        @apply rounded border-gray-400 text-theme focus:ring-theme transition;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-block text-center select-none border border-solid border-transparent rounded-md
+        leading-normal transition focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-current py-1.5 px-3;
+    }
+}
+
+@layer utilities {
+    .flex-100 {
+        @apply flex-grow flex-shrink;
+        flex-basis: 100%;
+    }
+
+    .collapsible {
+        @apply max-h-0 overflow-hidden md:overflow-visible md:max-h-full;
+        transition: max-height 0.35s ease-out;
+    }
+}

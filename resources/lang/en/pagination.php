@@ -16,4 +16,14 @@ return [
     'previous' => '&laquo; Previous',
     'next' => 'Next &raquo;',
 
+    /*
+     * Lines for the pagination component
+     */
+
+    'nav_label' => "Pagination Navigation",
+    'showing' => "Showing",
+    'to' => 'to',
+    'of' => 'of',
+    'results' => 'results',
+    'go_to' => 'Go to page :page',
 ];

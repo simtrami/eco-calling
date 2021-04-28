@@ -147,9 +147,10 @@
             id="form">
             <div class="mx-auto max-w-4xl">
                 <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-baseline">
-                    <h2 class="text-theme-dark font-title text-3xl font-bold md:text-4xl">{{ __('index.form_title') }}</h2>
+                    <h2 class="text-theme-dark font-title text-4xl font-bold">{{ __('index.form_title') }}</h2>
                     <p class="text-xl">
-                        {{ __('index.subtitle.already') }} <span
+                        {{ __('index.subtitle.already') }}
+                        <span
                             class="bg-theme text-white p-1">{!! __('index.subtitle.sign_count', ['count' => $count]) !!}</span>
                     </p>
                 </div>

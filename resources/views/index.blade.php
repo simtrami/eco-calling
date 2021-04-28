@@ -31,7 +31,7 @@
             </header>
             <nav class="text-center text-accent flex justify-center relative top-1/2 2xl:top-2/3">
                 <button
-                    class="rounded transition focus:outline-none focus:ring focus:ring-accent focus:ring-opacity-25 focus:ring-offset-2"
+                    class="transition transform focus:outline-none motion-safe:focus:scale-125"
                     onclick="scrollToTargetAdjusted('manifesto')">
                     <span class="font-semibold lg:text-lg">{{ __('index.start_reading') }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="animate-bounce h-6 w-6 mx-auto mt-4 lg:h-8 lg:w-8"

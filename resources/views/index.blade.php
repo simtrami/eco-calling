@@ -13,8 +13,8 @@
             id="error-alert">
             <div><p>{{ __('form.failure') }}</p></div>
             <button
-                class="btn bg-red-500 text-sm text-white hover:bg-transparent hover:border-red-500 hover:text-red-500 focus:ring-red-500 md:text-base"
-                onclick="scrollToForm()">{{ __('form.correct') }}</button>
+                class="btn bg-red-500 text-sm text-white min-w-max hover:bg-transparent hover:border-red-500 hover:text-red-500 focus:ring-red-500 md:text-base"
+                onclick="scrollToForm()">{{ __('form.fix') }}</button>
         </div>
     @endif
 

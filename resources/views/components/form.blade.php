@@ -3,8 +3,9 @@
     <div>
         <label for="first-name" class="text-sm font-medium text-theme-dark">{!! __('form.first_name.label') !!}</label>
         <div class="mt-1">
-            <input type="text" name="first_name" id="first-name" placeholder="{{ __('form.first_name.placeholder') }}"
-                   class="@error('first_name') border-red-600 focus:border-red-500 @enderror">
+            <input class="@error('first_name') border-red-600 focus:border-red-500 @enderror" type="text"
+                   name="first_name" id="first-name" placeholder="{{ __('form.first_name.placeholder') }}"
+                   value="{{ old('first_name') }}">
             @error('first_name')
             <div class="text-xs text-red-500">{{ $message }}</div>
             @enderror
@@ -13,8 +14,9 @@
     <div>
         <label for="last-name" class="text-sm font-medium text-theme-dark">{!! __('form.last_name.label') !!}</label>
         <div class="mt-1">
-            <input type="text" name="last_name" id="last-name" placeholder="{{ __('form.last_name.placeholder') }}"
-                   class="@error('last_name') border-red-600 focus:border-red-500 @enderror">
+            <input class="@error('last_name') border-red-600 focus:border-red-500 @enderror" type="text"
+                   name="last_name" id="last-name" placeholder="{{ __('form.last_name.placeholder') }}"
+                   value="{{ old('last_name') }}">
             @error('last_name')
             <div class="text-xs text-red-500">{{ $message }}</div>
             @enderror
@@ -23,8 +25,8 @@
     <div class="md:col-span-2">
         <label for="email" class="text-sm font-medium text-theme-dark">{!! __('form.email.label') !!}</label>
         <div class="mt-1">
-            <input type="email" name="email" id="email" placeholder="{{ __('form.email.placeholder') }}"
-                   class="@error('email') border-red-600 focus:border-red-500 @enderror">
+            <input class="@error('email') border-red-600 focus:border-red-500 @enderror" type="email" name="email"
+                   id="email" placeholder="{{ __('form.email.placeholder') }}" value="{{ old('email') }}">
             @error('email')
             <div class="text-xs text-red-500">{{ $message }}</div>
             @enderror

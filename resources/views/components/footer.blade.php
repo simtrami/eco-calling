@@ -8,7 +8,7 @@
             <nav class="space-x-2 text-xl sm:text-2xl" aria-label="{{ __('footer.select_languages') }}">
                 <a
                     class="inline-block transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                    @if(LaravelLocalization::getCurrentLocaleName() === 'en')
+                    @if(LaravelLocalization::getCurrentLocale() === 'en')
                     href="{{ LaravelLocalization::getLocalizedURL('fr') }}"
                     title="Passer en {{ LaravelLocalization::getSupportedLocales()['fr']['native'] }}"
                     @else

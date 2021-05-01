@@ -1,7 +1,7 @@
-<footer class="w-full bg-theme-dark text-white py-10 px-4 md:px-20 lg:px-0">
+<footer class="w-full bg-theme-dark text-white text-sm py-10 px-4 md:px-20 lg:px-0">
     <div class="mx-auto max-w-4xl">
         <div
-            class="flex flex-col-reverse items-center space-y-4 space-y-reverse md:flex-row md:justify-between md:space-y-0">
+            class="flex flex-col-reverse items-center space-y-4 space-y-reverse sm:flex-row sm:justify-between sm:space-y-0">
             <div>
                 <p>{{ env('OUR_NAME') }}</p>
             </div>

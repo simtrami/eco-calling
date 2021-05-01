@@ -1,11 +1,12 @@
 <?php
 
-namespace App\View\Components\Inputs;
+namespace App\View\Components;
 
+use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class SignButton extends Component
+class PageTitle extends Component
 {
     /**
      * Create a new component instance.
@@ -20,10 +21,10 @@ class SignButton extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return View|string
+     * @return View|Closure|string
      */
     public function render()
     {
-        return view('components.inputs.sign-button');
+        return view('components.page-title');
     }
 }

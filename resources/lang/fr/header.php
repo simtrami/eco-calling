@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'home' => 'Accueil',
+    'manifesto' => 'Manifeste',
     'signatures' => 'Signatures',
     'website' => 'Notre site',
     'share' => 'Partager',

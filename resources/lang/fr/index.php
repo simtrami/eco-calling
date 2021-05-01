@@ -2,7 +2,7 @@
 
 return [
     'page_title' => "Manifeste - :app_title",
-    'title' => "Un template de site<br>pour des réveils écologiques",
+    'title' => "Un template web<br>pour des réveils écologiques",
     'subtitle' => [
         'already' => 'Déjà',
         'sign_count' => ":count signataires&nbsp;!",

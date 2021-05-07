@@ -8,10 +8,10 @@ module.exports = {
         extend: {
             colors: {
                 theme: {
-                    DEFAULT: "#17925a",
-                    dark: "#0d5031",
+                    DEFAULT: "var(--color-theme)",
+                    dark: "var(--color-theme-dark)",
                 },
-                accent: "#ff650e",
+                accent: "var(--color-accent)",
             },
             fontFamily: {
                 body: "Montserrat, sans-serif",

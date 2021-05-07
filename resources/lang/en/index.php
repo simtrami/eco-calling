@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'page_title' => "Manifesto - :app_title",
+    'page_title' => "Manifesto - :app_name",
     'title' => "A web template<br>for ecological awakenings",
     'subtitle' => [
         'already' => 'Already',

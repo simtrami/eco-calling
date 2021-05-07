@@ -38,9 +38,9 @@
         </a>
         {{--Sign--}}
         <a
-            class="flex space-x-1 cursor-pointer btn text-sm rounded-full border-theme bg-theme text-white md:px-4 hover:bg-white hover:text-theme focus:ring-theme focus:ring-offset-white md:h-auto lg:text-base"
+            class="flex space-x-1 btn text-sm rounded-full border-theme bg-theme text-white hover:bg-white hover:text-theme focus:ring-theme focus:ring-offset-white md:h-auto md:px-4 lg:text-base"
             @if(Route::is('home'))
-            onclick="scrollToForm()"
+            onclick="scrollToForm()" href="javascript:void(0)"
             @else
             href="{{ route('home') }}#form"
             @endif

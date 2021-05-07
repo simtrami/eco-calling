@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title'){{ __('index.page_title', ['app_title' => env('APP_TITLE')]) }}@endsection
+@section('title'){{ __('index.page_title', ['app_name' => env('APP_NAME')]) }}@endsection
 
 @section('scripts')
     <script src="{{ mix('js/index.js') }}"></script>

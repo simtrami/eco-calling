@@ -1,8 +1,9 @@
 <nav
-    class="fixed top-0 right-0 left-0 z-50 bg-white shadow-md flex flex-wrap items-center justify-between py-0 px-2 md:flex-row md:flex-nowrap md:justify-start md:py-1 lg:py-2 md:px-4"
+    class="fixed top-0 right-0 left-0 z-50 min-h-[56px] bg-white shadow-md flex flex-wrap items-center justify-between py-0 px-2 md:min-h-[64px] md:flex-row md:flex-nowrap md:justify-start md:py-1 lg:min-h-[72px] lg:py-2 md:px-4"
     id="nav">
-    <a class="inline-block text-xl whitespace-nowrap py-1.5" href="{{ route('home') }}">
-        <img class="h-11" src="{{ asset('images/logo.png') }}" alt="Logo"/>
+    <a class="text-theme transition filter hover:drop-shadow transform focus:outline-none motion-safe:focus:scale-110"
+       href="{{ route('home') }}">
+        <x-icons.logo class="h-7 sm:h-9 lg:h-11"/>
     </a>
 
     <div class="font-medium text-theme flex items-center space-x-4 ml-auto sm:space-x-6 md:space-x-9">
@@ -38,9 +39,9 @@
         </a>
         {{--Sign--}}
         <a
-            class="flex space-x-1 cursor-pointer btn text-sm rounded-full border-theme bg-theme text-white md:px-4 hover:bg-white hover:text-theme focus:ring-theme focus:ring-offset-white md:h-auto lg:text-base"
+            class="flex space-x-1 btn text-sm rounded-full border-theme bg-theme text-white hover:bg-white hover:text-theme focus:ring-theme focus:ring-offset-white md:h-auto md:px-4 lg:text-base"
             @if(Route::is('home'))
-            onclick="scrollToForm()"
+            onclick="scrollToForm()" href="javascript:void(0)"
             @else
             href="{{ route('home') }}#form"
             @endif

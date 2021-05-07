@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'page_title' => "Signatures - :app_title",
+    'page_title' => "Signatures - :app_name",
     'title' => [
         'we' => "Nous avons",
         'count' => ":count&nbsp;personnes",

@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title'){{ __('signatures.page_title', ['app_title' => env('APP_TITLE')]) }}@endsection
+@section('title'){{ __('signatures.page_title', ['app_name' => env('APP_NAME')]) }}@endsection
 
 @section('content')
     <main role="main">

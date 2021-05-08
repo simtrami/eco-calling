@@ -8,7 +8,7 @@
 
     <div class="font-medium flex items-center space-x-4 ml-auto sm:space-x-6 md:space-x-9">
         {{--Manifesto--}}
-        <a class="{{ Route::is('home') ? 'text-theme-dark dark:text-gray-300 md:text-theme md:dark:text-white md:font-bold' : '' }} flex space-x-1 hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
+        <a class="{{ Route::is('home') ? 'text-theme-dark dark:text-theme-light md:text-theme md:dark:text-white md:font-bold' : '' }} flex space-x-1 transition hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
            href="{{ route('home') }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2 h-5 w-5" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
@@ -18,7 +18,7 @@
             <p class="hidden md:block">{{ __('header.manifesto') }}</p>
         </a>
         {{--Signatures--}}
-        <a class="{{ Route::is('signatures') ? 'text-theme-dark dark:text-theme md:text-theme md:dark:text-white md:font-bold' : '' }} flex space-x-1 hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
+        <a class="{{ Route::is('signatures') ? 'text-theme-dark dark:text-theme-light md:text-theme md:dark:text-white md:font-bold' : '' }} flex space-x-1 transition hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
            href="{{ route('signatures') }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2 h-5 w-5" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
@@ -28,7 +28,7 @@
             <p class="hidden md:block">{{ __('header.signatures') }}</p>
         </a>
         {{--External--}}
-        <a class="flex space-x-1 hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
+        <a class="flex space-x-1 transition hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
            href="{{ env('LINK_OFFICIAL_WEBSITE') }}"
            target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">

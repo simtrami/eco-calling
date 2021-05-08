@@ -8,4 +8,8 @@ return [
         'what' => 'with'
     ],
     'select_languages' => 'Change the site language',
+    'switch_mode' => [
+        'title' => 'Switch between brightness modes',
+        'text' => 'Switch to',
+    ],
 ];

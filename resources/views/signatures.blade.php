@@ -21,7 +21,7 @@
             class="w-full flex items-center min-h-[calc(100vh-56px)] py-8 px-4 md:min-h-[calc(100vh-64px)] md:px-20 lg:min-h-[calc(100vh-72px)] lg:px-0"
             id="signatures">
             <article class="flex-grow mx-auto max-w-4xl">
-                <h2 class="text-theme-dark font-title text-3xl font-bold mb-6 md:text-4xl">{{ __('signatures.table.title') }}</h2>
+                <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mb-6 md:text-4xl">{{ __('signatures.table.title') }}</h2>
 
                 <x-table :columns="[__('signatures.table.columns.names') => 'full_name']"
                          :elements="$signatures">{{ __('signatures.table.empty') }}</x-table>

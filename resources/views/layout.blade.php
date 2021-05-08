@@ -31,7 +31,7 @@
     @yield('stylesheets')
 </head>
 
-<body class="font-body text-gray-800">
+<body class="bg-white font-body text-gray-800">
 
 <x-nav/>
 

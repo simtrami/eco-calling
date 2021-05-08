@@ -1,14 +1,14 @@
 <nav
-    class="fixed top-0 right-0 left-0 z-50 min-h-[56px] bg-white shadow-md flex flex-wrap items-center justify-between py-0 px-2 md:min-h-[64px] md:flex-row md:flex-nowrap md:justify-start md:py-1 lg:min-h-[72px] lg:py-2 md:px-4"
+    class="bg-white dark:bg-dark text-theme dark:text-white shadow-md fixed top-0 right-0 left-0 z-50 flex flex-wrap items-center justify-between min-h-[56px] py-0 px-2 md:min-h-[64px] md:flex-row md:flex-nowrap md:justify-start md:py-1 lg:min-h-[72px] lg:py-2 md:px-4"
     id="nav">
-    <a class="text-theme transition filter hover:drop-shadow transform focus:outline-none motion-safe:focus:scale-110"
+    <a class="dark:text-theme-light transition filter hover:drop-shadow transform focus:outline-none motion-safe:focus:scale-110"
        href="{{ route('home') }}">
         <x-icons.logo class="h-7 sm:h-9 lg:h-11"/>
     </a>
 
-    <div class="font-medium text-theme flex items-center space-x-4 ml-auto sm:space-x-6 md:space-x-9">
+    <div class="font-medium flex items-center space-x-4 ml-auto sm:space-x-6 md:space-x-9">
         {{--Manifesto--}}
-        <a class="{{ Route::is('home') ? 'text-theme-dark md:text-theme md:font-bold' : '' }} flex space-x-1 hover:text-theme-dark focus:outline-none focus:underline"
+        <a class="{{ Route::is('home') ? 'text-theme-dark dark:text-gray-300 md:text-theme md:dark:text-white md:font-bold' : '' }} flex space-x-1 hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
            href="{{ route('home') }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2 h-5 w-5" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
@@ -18,7 +18,7 @@
             <p class="hidden md:block">{{ __('header.manifesto') }}</p>
         </a>
         {{--Signatures--}}
-        <a class="{{ Route::is('signatures') ? 'text-theme-dark md:text-theme md:font-bold' : '' }} flex space-x-1 hover:text-theme-dark focus:outline-none focus:underline"
+        <a class="{{ Route::is('signatures') ? 'text-theme-dark dark:text-theme md:text-theme md:dark:text-white md:font-bold' : '' }} flex space-x-1 hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
            href="{{ route('signatures') }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-2 h-5 w-5" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
@@ -28,7 +28,7 @@
             <p class="hidden md:block">{{ __('header.signatures') }}</p>
         </a>
         {{--External--}}
-        <a class="flex space-x-1 hover:text-theme-dark focus:outline-none focus:underline"
+        <a class="flex space-x-1 hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
            href="{{ env('LINK_OFFICIAL_WEBSITE') }}"
            target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -39,7 +39,7 @@
         </a>
         {{--Sign--}}
         <a
-            class="flex space-x-1 btn text-sm rounded-full border-theme bg-theme text-white hover:bg-white hover:text-theme focus:ring-theme focus:ring-offset-white md:h-auto md:px-4 lg:text-base"
+            class="flex space-x-1 btn text-sm rounded-full border-theme dark:border-white bg-theme dark:bg-white text-white dark:text-gray-800 hover:bg-white dark:hover:bg-dark hover:text-theme dark:hover:text-white focus:ring-theme dark:focus:ring-white focus:ring-offset-white dark:focus:ring-offset-dark md:h-auto md:px-4 lg:text-base"
             @if(Route::is('home'))
             onclick="scrollToForm()" href="javascript:void(0)"
             @else

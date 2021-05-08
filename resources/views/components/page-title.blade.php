@@ -3,8 +3,8 @@
     id="title">
     <header
         class="font-title font-bold w-full md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl m-auto">
-        <h1 class="w-full text-theme-dark text-5xl leading-snug md:text-6xl lg:text-7xl">{{ $title }}</h1>
-        @if (defined('subtitle'))
+        <h1 class="w-full text-theme-dark dark:text-white text-5xl leading-snug md:text-6xl lg:text-7xl">{{ $title }}</h1>
+        @if (isset($subtitle))
             <p class="text-2xl mt-4">
                 {!! $subtitle !!}
             </p>

@@ -41,14 +41,15 @@
                 </p>
             </header>
             <!-- Socials -->
-            <aside class="text-theme flex-col sticky top-40 ml-4 mt-4 p-0 text-center hidden md:inline-flex">
+            <aside
+                class="text-theme dark:text-theme-light flex-col sticky top-40 ml-4 mt-4 p-0 text-center hidden md:inline-flex">
                 <div class="opacity-30 px-2.5 my-3 mx-0">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path
                             d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
                     </svg>
                 </div>
-                <hr class="border-theme opacity-30 w-full my-4"/>
+                <hr class="border-theme-light opacity-30 w-full my-4"/>
                 <div class="flex flex-col space-y-6 px-2.5 mx-0">
                     <a class="transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
                        href="{{ env('LINK_POST_FB') }}" target="_blank" title="{{ __('socials.facebook') }}">
@@ -73,7 +74,8 @@
                         Deleniti atque et consequatur quia suscipit. Illo debitis officiis dolorem accusamus et corporis
                         nihil. Distinctio qui esse est.
                     </p>
-                    <h2 class="text-theme-dark font-title text-3xl font-bold mt-8 md:text-4xl">Sunt verpaes reperire
+                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">
+                        Sunt verpaes reperire
                         fatalis, varius abactores.</h2>
                     <p class="mt-5">
                         Aliquid ea et et et non et repellendus enim. Consequatur sint delectus in. Placeat quae est et
@@ -89,7 +91,8 @@
                         Quidem vero blanditiis ut error perferendis quae. Ab maxime ut sequi rerum explicabo accusamus
                         ipsam sed.
                     </p>
-                    <h2 class="text-theme-dark font-title text-3xl font-bold mt-8 md:text-4xl">Camerarius eleates foris
+                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">
+                        Camerarius eleates foris
                         demittos humani generis est.</h2>
                     <ul class="list-disc mt-5 pl-8">
                         <li>Yarr, haul me bung hole, ye sunny shipmate!</li>
@@ -106,7 +109,8 @@
                         faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse sit amet leo cursus erat
                         ornare interdum ac et felis.
                     </p>
-                    <h2 class="text-theme-dark font-title text-3xl font-bold mt-8 md:text-4xl">Ubi est festus
+                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">Ubi
+                        est festus
                         verpa?</h2>
                     <p class="mt-5">
                         Nulla sit amet enim id eros malesuada porta. Phasellus porttitor posuere urna, id facilisis sem
@@ -136,7 +140,7 @@
             id="form">
             <div class="mx-auto max-w-4xl">
                 <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-baseline">
-                    <h2 class="text-theme-dark font-title text-4xl font-bold">{{ __('index.form_title') }}</h2>
+                    <h2 class="text-theme-dark dark:text-white font-title text-4xl font-bold">{{ __('index.form_title') }}</h2>
                     <p class="text-xl">
                         {{ __('index.subtitle.already') }}
                         <span

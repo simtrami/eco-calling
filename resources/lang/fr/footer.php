@@ -7,8 +7,9 @@ return [
         'who' => 'Conçu par',
         'what' => 'avec'
     ],
-    'languages' => [
-        'label' => 'Changer la langue du site',
-        'link' => 'Passer en :locale',
+    'select_languages' => 'Changer la langue du site',
+    'switch_mode' => [
+        'title' => "Changer de mode d'affichage",
+        'text' => 'Mode',
     ],
 ];

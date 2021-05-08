@@ -10,7 +10,7 @@
     </thead>
     <tbody>
     @forelse ($elements as $elt)
-        <tr class="hover:bg-gray-50">
+        <tr class="hover:bg-gray-50 dark:hover:bg-dark">
             @foreach($columns as $col)
                 <td class="border-t-2 border-dotted border-theme-dark border-opacity-75 p-1.5">{{ $elt[$col] }}</td>
             @endforeach

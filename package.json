@@ -9,6 +9,7 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.3.2",
+        "autoprefixer": "^10.2.6",
         "browser-sync": "^2.26.14",
         "browser-sync-webpack-plugin": "2.3.0",
         "cross-env": "^7.0",
@@ -16,10 +17,7 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1",
         "resolve-url-loader": "^4.0",
-        "sass": "^1.32.8",
-        "sass-loader": "^8.0.2",
-        "tailwindcss": "^2.2",
-        "typeface-montserrat": "^1.1.13",
-        "vue-template-compiler": "^2.6.12"
+        "tailwindcss": "^2",
+        "typeface-montserrat": "^1.1.13"
     }
 }

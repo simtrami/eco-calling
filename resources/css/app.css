@@ -65,4 +65,11 @@
         transition
         py-1.5 px-3;
     }
+
+    .section-title {
+        @apply
+        text-theme-dark dark:text-theme-light
+        dark:selection:bg-theme
+        font-title font-bold text-3xl md:text-4xl
+    }
 }

@@ -23,7 +23,7 @@
             id="signatures"
         >
             <article class="flex-grow mx-auto max-w-4xl">
-                <h2 class="text-theme-dark dark:text-theme-light dark:selection:bg-theme font-title text-3xl font-bold mb-6 md:text-4xl">{{ __('signatures.table.title') }}</h2>
+                <h2 class="section-title mb-6">{{ __('signatures.table.title') }}</h2>
 
                 <x-table :columns="[__('signatures.table.columns.names') => 'full_name']"
                          :elements="$signatures"

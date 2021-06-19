@@ -83,8 +83,7 @@
                         Deleniti atque et consequatur quia suscipit. Illo debitis officiis dolorem accusamus et corporis
                         nihil. Distinctio qui esse est.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light dark:selection:bg-theme font-title text-3xl font-bold mt-8 md:text-4xl">
-                        Sunt verpaes reperire fatalis, varius abactores.</h2>
+                    <h2 class="section-title mt-8">Sunt verpaes reperire fatalis, varius abactores.</h2>
                     <p class="mt-5">
                         Aliquid ea et et et non et repellendus enim. Consequatur sint delectus in. Placeat quae est et
                         eveniet. Excepturi optio eum eveniet iste aut eum.
@@ -99,9 +98,8 @@
                         Quidem vero blanditiis ut error perferendis quae. Ab maxime ut sequi rerum explicabo accusamus
                         ipsam sed.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light dark:selection:bg-theme font-title text-3xl font-bold mt-8 md:text-4xl">
-                        Camerarius eleates foris demittos humani generis est.</h2>
-                    <ul class="list-disc mt-5 pl-8">
+                    <h2 class="section-title mt-8">Camerarius eleates foris demittos humani generis est.</h2>
+                    <ul class="list-disc marker:text-theme list-inside mt-5">
                         <li>Yarr, haul me bung hole, ye sunny shipmate!</li>
                         <li>Arg, weird parrot. go to port royal.</li>
                         <li>Arg, passion!</li>
@@ -116,8 +114,7 @@
                         faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse sit amet leo cursus erat
                         ornare interdum ac et felis.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light dark:selection:bg-theme font-title text-3xl font-bold mt-8 md:text-4xl">
-                        Ubi est festus verpa?</h2>
+                    <h2 class="section-title mt-8">Ubi est festus verpa?</h2>
                     <p class="mt-5">
                         Nulla sit amet enim id eros malesuada porta. Phasellus porttitor posuere urna, id facilisis sem
                         euismod nec. Nunc a dolor et enim congue commodo. Donec pharetra commodo dolor, sed euismod
@@ -147,7 +144,7 @@
         >
             <div class="mx-auto max-w-4xl">
                 <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-baseline">
-                    <h2 class="text-theme-dark dark:text-white font-title text-4xl font-bold">{{ __('index.form_title') }}</h2>
+                    <h2 class="section-title">{{ __('index.form_title') }}</h2>
                     <p class="text-xl">
                         {{ __('index.subtitle.already') }}
                         <span class="bg-theme text-white p-1"

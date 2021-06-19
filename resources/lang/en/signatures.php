@@ -3,7 +3,7 @@
 return [
     'page_title' => "Signatures - :app_name",
     'title' => [
-        'we' => "We have",
+        'we' => "There are",
         'count' => ":count&nbsp;people",
         'who' => 'who support us',
     ],

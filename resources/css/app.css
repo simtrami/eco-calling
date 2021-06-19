@@ -1,11 +1,11 @@
 :root {
-    --color-theme: #17925a;
-    --color-theme-dark: #0d5031;
+    --color-theme:       #17925a;
+    --color-theme-dark:  #0d5031;
     --color-theme-light: #44db8d;
-    --color-accent: #ff650e;
-    --color-somber: #323232;
-    --color-dark: #202020;
-    --color-darker: #181818;
+    --color-accent:      #ff650e;
+    --color-somber:      #323232;
+    --color-dark:        #202020;
+    --color-darker:      #181818;
 }
 
 @tailwind base;
@@ -15,54 +15,48 @@
 @layer base {
     @font-face {
         font-family: 'd-din-condensed';
-        src: url('../fonts/d-dincondensed-webfont.woff2') format('woff2'),
-        url('../fonts/d-dincondensed-webfont.woff') format('woff');
+        src:         url('../fonts/d-dincondensed-webfont.woff2') format('woff2'),
+                     url('../fonts/d-dincondensed-webfont.woff') format('woff');
         font-weight: normal;
-        font-style: normal;
+        font-style:  normal;
+    }
+    [type='text'], [type='search'], textarea, [type='number'],
+    [type='password'], [type='email'], [type='url'], [type='tel'],
+    [type='date'], [type='datetime-local'], [type='time'], [type='month'], [type='week'],
+    [multiple], select {
+        @apply
+        bg-white dark:bg-dark
+        w-full
+        rounded-md border-0 focus:border-b focus:border-b-theme
+        shadow-sm dark:shadow-none focus:shadow-lg dark:focus:shadow-none
+        focus:outline-none focus:ring-0
+        transition;
     }
 
-    [type='text'],
-    [type='email'],
-    [type='url'],
-    [type='password'],
-    [type='number'],
-    [type='date'],
-    [type='datetime-local'],
-    [type='month'],
-    [type='search'],
-    [type='tel'],
-    [type='time'],
-    [type='week'],
-    [multiple],
-    textarea,
-    select {
-        @apply bg-white dark:bg-dark w-full border-gray-400 rounded-md border-0 border-b shadow-sm dark:shadow-none
-        focus:outline-none focus:border-theme focus:ring-0 focus:shadow-lg dark:focus:shadow-none transition;
-    }
-
-    [type='checkbox'],
-    [type='radio'] {
-        @apply rounded border-gray-400 text-theme focus:ring-theme focus:ring-offset-white dark:focus:ring-offset-darker
+    [type='checkbox'], [type='radio'] {
+        @apply
+        text-theme
+        rounded border-gray-400
+        focus:ring-theme focus:ring-offset-white dark:focus:ring-offset-darker
         transition;
     }
 }
 
 @layer components {
     .btn {
-        @apply inline-block text-center select-none border border-solid border-transparent rounded-md leading-normal
-        transition focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-current
+        @apply
+        inline-block select-none
+        text-center leading-normal
+        border border-solid border-transparent rounded-md
+        focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-current
+        transition
         py-1.5 px-3;
     }
-}
 
-@layer utilities {
-    .flex-100 {
-        @apply flex-grow flex-shrink;
-        flex-basis: 100%;
-    }
-
-    .collapsible {
-        @apply max-h-0 overflow-hidden md:overflow-visible md:max-h-full;
-        transition: max-height 0.35s ease-out;
+    .section-title {
+        @apply
+        text-theme-dark dark:text-theme-light
+        dark:selection:bg-theme
+        font-title font-bold text-3xl md:text-4xl
     }
 }

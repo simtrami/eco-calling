@@ -20,22 +20,10 @@
         font-weight: normal;
         font-style:  normal;
     }
-
-    [type='text'],
-    [type='email'],
-    [type='url'],
-    [type='password'],
-    [type='number'],
-    [type='date'],
-    [type='datetime-local'],
-    [type='month'],
-    [type='search'],
-    [type='tel'],
-    [type='time'],
-    [type='week'],
-    [multiple],
-    textarea,
-    select {
+    [type='text'], [type='search'], textarea, [type='number'],
+    [type='password'], [type='email'], [type='url'], [type='tel'],
+    [type='date'], [type='datetime-local'], [type='time'], [type='month'], [type='week'],
+    [multiple], select {
         @apply
         bg-white dark:bg-dark
         w-full
@@ -45,8 +33,7 @@
         transition;
     }
 
-    [type='checkbox'],
-    [type='radio'] {
+    [type='checkbox'], [type='radio'] {
         @apply
         text-theme
         rounded border-gray-400

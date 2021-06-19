@@ -74,7 +74,7 @@
                         Deleniti atque et consequatur quia suscipit. Illo debitis officiis dolorem accusamus et corporis
                         nihil. Distinctio qui esse est.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">
+                    <h2 class="text-theme-dark dark:text-theme-light dark:selection:bg-theme font-title text-3xl font-bold mt-8 md:text-4xl">
                         Sunt verpaes reperire
                         fatalis, varius abactores.</h2>
                     <p class="mt-5">
@@ -91,7 +91,7 @@
                         Quidem vero blanditiis ut error perferendis quae. Ab maxime ut sequi rerum explicabo accusamus
                         ipsam sed.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">
+                    <h2 class="text-theme-dark dark:text-theme-light dark:selection:bg-theme font-title text-3xl font-bold mt-8 md:text-4xl">
                         Camerarius eleates foris
                         demittos humani generis est.</h2>
                     <ul class="list-disc mt-5 pl-8">
@@ -109,7 +109,8 @@
                         faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse sit amet leo cursus erat
                         ornare interdum ac et felis.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">Ubi
+                    <h2 class="text-theme-dark dark:text-theme-light dark:selection:bg-theme font-title text-3xl font-bold mt-8 md:text-4xl">
+                        Ubi
                         est festus
                         verpa?</h2>
                     <p class="mt-5">

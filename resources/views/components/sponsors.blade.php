@@ -45,7 +45,8 @@
             <p class="text-center">
                 {!! __('sponsors.join_us') !!}
                 <a class="text-theme transition hover:text-theme-dark dark:hover:text-theme-light focus:outline-none focus:underline"
-                   href="mailto:{{ env('MAIL_REPLY_TO_ADDRESS') }}">{{ env('MAIL_REPLY_TO_ADDRESS') }}</a>
+                   href="mailto:{{ env('MAIL_REPLY_TO_ADDRESS') }}"
+                >{{ env('MAIL_REPLY_TO_ADDRESS') }}</a>
             </p>
         </div>
     </div>

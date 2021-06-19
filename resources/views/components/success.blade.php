@@ -4,16 +4,18 @@
         <p class="font-medium">{{ __('success.explanations') }}</p>
         <p class="my-6">{{ __('success.please_share') }}</p>
         <div class="flex flex-row justify-center space-x-8">
-            <a class="transition transform motion-safe:hover:scale-125" href="{{ env('LINK_POST_FB') }}" target="_blank"
-               title="{{ __('socials.facebook') }}">
+            <a class="transition motion-safe:hover:scale-125" href="{{ env('LINK_POST_FB') }}" target="_blank"
+               title="{{ __('socials.facebook') }}"
+            >
                 <x-icons.facebook class="h-7 w-7"/>
-            </a>
-            <a class="transition transform motion-safe:hover:scale-125" href="{{ env('LINK_POST_TW') }}" target="_blank"
-               title="{{ __('socials.twitter') }}">
+            </a> <a class="transition motion-safe:hover:scale-125" href="{{ env('LINK_POST_TW') }}"
+                    target="_blank"
+                    title="{{ __('socials.twitter') }}"
+            >
                 <x-icons.twitter class="h-7 w-7"/>
-            </a>
-            <a class="transition transform motion-safe:hover:scale-125" href="{{ env('LINK_POST_LIN') }}"
-               target="_blank" title="{{ __('socials.linkedin') }}">
+            </a> <a class="transition motion-safe:hover:scale-125" href="{{ env('LINK_POST_LIN') }}"
+                    target="_blank" title="{{ __('socials.linkedin') }}"
+            >
                 <x-icons.linkedin class="h-7 w-7"/>
             </a>
         </div>
@@ -21,8 +23,9 @@
         <p class="font-medium">{{ __('success.actions') }}</p>
         <p class="my-6">{{ __('success.slogan') }}</p>
         <div class="flex w-full justify-center">
-            <a class="btn shadow-md rounded-full bg-white text-theme font-medium transform motion-safe:hover:scale-110 focus:ring-white px-6"
-               href="{{ env('LINK_JOIN_US') }}" target="_blank">{{ __('success.join_us') }}</a>
+            <a class="btn shadow-md rounded-full bg-white text-theme font-medium motion-safe:hover:scale-110 focus:ring-white px-6"
+               href="{{ env('LINK_JOIN_US') }}" target="_blank"
+            >{{ __('success.join_us') }}</a>
         </div>
     </div>
 </div>

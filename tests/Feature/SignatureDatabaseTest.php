@@ -13,6 +13,37 @@ class SignatureDatabaseTest extends TestCase
     use RefreshDatabase;
 
     /**
+     * Create and save a pending signature with the factory.
+     * The signature is not verified.
+     *
+     * @return void
+     */
+    public function testCreateSignatureWithFactory1(): void
+    {
+        $this->assertDatabaseCount('signatures', 0);
+        Signature::factory()->create();
+        $this->assertDatabaseCount('signatures', 1);
+        $this->assertDatabaseHas('signatures', [
+            'email_verified_at' => null,
+        ]);
+    }
+
+    /**
+     * Create and save a confirmed signature with the factory.
+     *
+     * @return void
+     */
+    public function testCreateSignatureWithFactory2(): void
+    {
+        $this->assertDatabaseCount('signatures', 0);
+        Signature::factory()->confirmed()->create();
+        $this->assertDatabaseCount('signatures', 1);
+        $this->assertDatabaseMissing('signatures', [
+            'email_verified_at' => null,
+        ]);
+    }
+
+    /**
      * Create and save a signature.
      *
      * @return void

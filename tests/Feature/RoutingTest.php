@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Signature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -26,12 +27,73 @@ class RoutingTest extends TestCase
     /**
      * GET signatures
      * Reach the signature page with success
+     * There is no signatures
      *
      * @return void
      */
-    public function testGetSignatures(): void
+    public function testGetSignatures1(): void
     {
         $response = $this->get('/signatures');
+
+        $response->assertOk();
+    }
+
+    /**
+     * GET signatures
+     * Reach the signature page with success
+     * There is one page of signatures
+     *
+     * @return void
+     */
+    public function testGetSignatures2(): void
+    {
+        Signature::factory()->confirmed()->count(10);
+        $response = $this->get('/signatures');
+
+        $response->assertOk();
+    }
+
+    /**
+     * GET signatures?page=1
+     * Reach the signatures' first page with success
+     * There are two pages of signatures
+     *
+     * @return void
+     */
+    public function testGetSignatures3(): void
+    {
+        Signature::factory()->confirmed()->count(20);
+        $response = $this->get('/signatures');
+
+        $response->assertOk();
+    }
+
+    /**
+     * GET signatures?page=2
+     * Reach the signatures' second page with success
+     * There are two pages of signatures
+     *
+     * @return void
+     */
+    public function testGetSignatures4(): void
+    {
+        Signature::factory()->confirmed()->count(20);
+        $response = $this->get('/signatures?page=2');
+
+        $response->assertOk();
+    }
+
+    /**
+     * GET signatures?page=3
+     * Reach the signatures' third page with success
+     * There are two pages of signatures
+     *
+     * @return void
+     */
+    public function testGetSignatures5(): void
+    {
+        Signature::factory()->confirmed()->count(20);
+        $response = $this->get('/signatures?page=3');
 
         $response->assertOk();
     }

@@ -4,27 +4,20 @@ namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\View\Component;
 
 class Table extends Component
 {
-    /**
-     * @var array
-     */
     public array $columns;
 
-    /**
-     * @var array|Model
-     */
-    public array|Model $elements;
+    public mixed $elements;
 
     /**
      * Table constructor.
      * @param array $columns
-     * @param array|Model $elements
+     * @param mixed $elements
      */
-    public function __construct(array $columns, Model|array $elements)
+    public function __construct(array $columns, mixed $elements)
     {
         $this->columns = $columns;
         $this->elements = $elements;

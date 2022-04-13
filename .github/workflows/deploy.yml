@@ -7,11 +7,25 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12-alpine
+        env:
+          POSTGRES_USER: localUser
+          POSTGRES_PASSWORD: localPassword
+          POSTGRES_DB: test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - name: Setup PHP
         uses: shivammathur/setup-php@master
         with:
-          php-version: '7.4'
+          php-version: '8.1'
       - name: Setup node
         uses: actions/setup-node@master
         with:
@@ -29,14 +43,14 @@ jobs:
         run: php artisan key:generate
       - name: Set directory permissions
         run: chmod -R 777 storage bootstrap/cache
-      - name: Create database
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
+          DB_CONNECTION: pgsql
+          DB_HOST: localhost
+          DB_PORT: 5432
+          DB_DATABASE: test
+          DB_USERNAME: localUser
+          DB_PASSWORD: localPassword
         run: vendor/bin/phpunit
   deploy:
     needs: test

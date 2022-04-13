@@ -75,6 +75,7 @@ class VerifySignature extends Notification
     public function toMail(Signature $signature): MailMessage
     {
         return (new MailMessage)
+            ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
             ->replyTo(env('MAIL_REPLY_TO_ADDRESS'), env('MAIL_REPLY_TO_NAME'))
             ->subject(Lang::get('mail.subject'))
             ->greeting(Lang::get('mail.greeting',

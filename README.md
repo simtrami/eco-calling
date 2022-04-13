@@ -7,16 +7,16 @@
 
 ## Development
 
-This project uses the [Laravel](https://laravel.com/) framework. Please, refer to the documentation version 8.x for
+This project uses the [Laravel](https://laravel.com/) framework. Please, refer to the documentation version 9.x for
 contributing to the project.
 
 ### Environment
 
 In order to test the code, you will need to comply with the
-requirements [here](https://laravel.com/docs/8.x/installation#server-requirements). For setting up your environment
-quickly, consider using [Valet](https://laravel.com/docs/8.x/valet)
-if you are on MacOS, or [Homestead](https://laravel.com/docs/8.x/homestead) otherwise. You will only require
-the [PHP CLI](https://www.php.net/downloads) (≥v7.3)
+requirements [here](https://laravel.com/docs/9.x/installation#server-requirements). For setting up your environment
+quickly, consider using [Valet](https://laravel.com/docs/9.x/valet)
+if you are on MacOS, or [Homestead](https://laravel.com/docs/9.x/homestead) otherwise. You will only require
+the [PHP CLI](https://www.php.net/downloads) (≥v8.1)
 and the [Composer executable](https://getcomposer.org/download/).
 
 You will also need NodeJS and Yarn installed in your development environment. If you chose to use Homestead, you have
@@ -27,7 +27,7 @@ to [Yarn's documentation](https://classic.yarnpkg.com/en/docs/install) to instal
 
 If you are new to using Laravel, consider taking the time to familiarize with the framework concepts. There are
 plentiful of resources on the subjects, the most important being
-the [official documentation](https://laravel.com/docs/8.x)
+the [official documentation](https://laravel.com/docs/9.x)
 and the [Laracasts video guides](https://laracasts.com/topics/laravel).
 
 Once you have cloned the repository, install the project's dependencies and compile the assets for your environment.
@@ -49,7 +49,7 @@ php artisan key:generate
 ```
 
 The default parameters are set to work within a Homestead environment. You must at least change the database parameters
-to suit your own environment. The [Laravel database documentation](https://laravel.com/docs/8.x/database#configuration)
+to suit your own environment. The [Laravel database documentation](https://laravel.com/docs/9.x/database#configuration)
 gives out them most common configurations as examples.
 
 Then, execute the database migrations and start the development server.
@@ -72,7 +72,7 @@ mix watch
 The browser sync feature is activated when in a development environment. It will refresh your page everytime you save
 changes in the watched files. You can configure this behaviour in the `webpack.mix.js` file.
 
-Learn more in the [Laravel documentation](https://laravel.com/docs/8.x/mix) and
+Learn more in the [Laravel documentation](https://laravel.com/docs/9.x/mix) and
 the [Mix documentation](https://laravel-mix.com/docs/6.0).
 
 ### Testing
@@ -83,7 +83,7 @@ Homestead, make sure to run the tests inside the Vagrant box as you might encoun
 otherwise.
 
 For anything regarding testing, please refer to
-the [Laravel testing documentation](https://laravel.com/docs/8.x/testing).
+the [Laravel testing documentation](https://laravel.com/docs/9.x/testing).
 
 ## Production
 

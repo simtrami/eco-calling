@@ -3,8 +3,8 @@
 return [
     'page_title' => "Signatures - :app_name",
     'title' => [
-        'we' => "Nous avons",
-        'count' => ":count&nbsp;personnes",
+        'we' => "Voici les",
+        'count' => ":count&nbsp;signataires",
         'who' => 'qui nous soutiennent',
     ],
     'go_to_table' => 'Rencontrez les signataires',

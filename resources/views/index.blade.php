@@ -10,11 +10,15 @@
     @if ($errors->any())
         <div
             class="w-full flex justify-between items-center space-x-2 fixed top-[56px] bg-red-200 text-red-500 z-10 p-4 md:top-[64px] md:px-4 lg:top-[72px]"
-            id="error-alert">
-            <div><p>{{ __('form.failure') }}</p></div>
+            id="error-alert"
+        >
+            <div>
+                <p>{{ __('form.failure') }}</p>
+            </div>
             <button
                 class="btn bg-red-500 text-sm text-white min-w-max hover:bg-transparent hover:border-red-500 hover:text-red-500 focus:ring-red-500 md:text-base"
-                onclick="scrollToForm()">{{ __('form.fix') }}</button>
+                onclick="scrollToForm()"
+            >{{ __('form.fix') }}</button>
         </div>
     @endif
 
@@ -24,44 +28,50 @@
             <x-slot name="title">{!! __('index.title') !!}</x-slot>
 
             <x-slot name="subtitle">{!! __('index.subtitle.already') !!} <span
-                    class="bg-theme text-white p-1">{!! __('index.subtitle.sign_count', ['count' => $count]) !!}</span>
+                    class="bg-theme text-white p-1"
+                >{!! __('index.subtitle.sign_count', ['count' => $count]) !!}</span>
             </x-slot>
 
             <x-slot name="scrollButtonText">{{ __('index.start_reading') }}</x-slot>
-            <x-slot name="scrollButtonAction">scrollToTargetAdjusted('manifesto')</x-slot>
+            <x-slot name="scrollButtonAction">scrollToForm()</x-slot>
         </x-page-title>
 
         <section class="w-full mb-12 md:text-lg" id="manifesto">
             <!-- Headline -->
-            <header class="bg-theme text-white py-10 px-4 md:px-20 lg:px-0">
+            <header class="bg-theme text-white text-justify py-10 px-4 md:px-20 lg:px-0">
                 <p class="mx-auto max-w-4xl">
-                    Sunt amores manifestum audax, neuter acipenseres.
-                    Going to the mind doesn’t hurt joy anymore than
+                    Sunt amores manifestum audax, neuter acipenseres. Going to the mind doesn’t hurt joy anymore than
                     inventing creates outer stigma. Why does the ferengi warp?
                 </p>
             </header>
             <!-- Socials -->
             <aside
-                class="text-theme dark:text-theme-light flex-col sticky top-40 ml-4 mt-4 p-0 text-center hidden md:inline-flex">
+                class="text-theme dark:text-theme-light flex-col sticky top-40 ml-4 mt-4 p-0 text-center hidden md:inline-flex"
+            >
                 <div class="opacity-30 px-2.5 my-3 mx-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path
-                            d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
-                    </svg>
+                    <x-icons.share class="h-5 w-5"></x-icons.share>
                 </div>
                 <hr class="border-theme-light opacity-30 w-full my-4"/>
                 <div class="flex flex-col space-y-6 px-2.5 mx-0">
-                    <a class="transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                       href="{{ env('LINK_POST_FB') }}" target="_blank" title="{{ __('socials.facebook') }}">
-                        <x-icons.facebook class="h-5 w-5"/>
-                    </a>
-                    <a class="transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                       href="{{ env('LINK_POST_TW') }}" target="_blank" title="{{ __('socials.twitter') }}">
-                        <x-icons.twitter class="h-5 w-5"/>
-                    </a>
-                    <a class="transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                       href="{{ env('LINK_POST_LIN') }}" target="_blank" title="{{ __('socials.linkedin') }}">
-                        <x-icons.linkedin class="h-5 w-5"/>
+                    <a class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
+                       href="{{ env('LINK_POST_FB') }}" target="_blank" title="{{ __('socials.facebook') }}"
+                    >
+                        <x-icons.facebook class="h-5 w-5"></x-icons.facebook>
+                    </a> <a
+                        class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
+                        href="{{ env('LINK_POST_TW') }}" target="_blank" title="{{ __('socials.twitter') }}"
+                    >
+                        <x-icons.twitter class="h-5 w-5"></x-icons.twitter>
+                    </a> <a
+                        class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
+                        href="{{ env('LINK_POST_INSTA') }}" target="_blank" title="{{ __('socials.instagram') }}"
+                    >
+                        <x-icons.instagram class="h-5 w-5"></x-icons.instagram>
+                    </a> <a
+                        class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
+                        href="{{ env('LINK_POST_LIN') }}" target="_blank" title="{{ __('socials.linkedin') }}"
+                    >
+                        <x-icons.linkedin class="h-5 w-5"></x-icons.linkedin>
                     </a>
                 </div>
             </aside>
@@ -74,9 +84,7 @@
                         Deleniti atque et consequatur quia suscipit. Illo debitis officiis dolorem accusamus et corporis
                         nihil. Distinctio qui esse est.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">
-                        Sunt verpaes reperire
-                        fatalis, varius abactores.</h2>
+                    <h2 class="section-title mt-8">Sunt verpaes reperire fatalis, varius abactores.</h2>
                     <p class="mt-5">
                         Aliquid ea et et et non et repellendus enim. Consequatur sint delectus in. Placeat quae est et
                         eveniet. Excepturi optio eum eveniet iste aut eum.
@@ -91,10 +99,8 @@
                         Quidem vero blanditiis ut error perferendis quae. Ab maxime ut sequi rerum explicabo accusamus
                         ipsam sed.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">
-                        Camerarius eleates foris
-                        demittos humani generis est.</h2>
-                    <ul class="list-disc mt-5 pl-8">
+                    <h2 class="section-title mt-8">Camerarius eleates foris demittos humani generis est.</h2>
+                    <ul class="list-disc marker:text-theme list-inside mt-5">
                         <li>Yarr, haul me bung hole, ye sunny shipmate!</li>
                         <li>Arg, weird parrot. go to port royal.</li>
                         <li>Arg, passion!</li>
@@ -109,9 +115,7 @@
                         faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse sit amet leo cursus erat
                         ornare interdum ac et felis.
                     </p>
-                    <h2 class="text-theme-dark dark:text-theme-light font-title text-3xl font-bold mt-8 md:text-4xl">Ubi
-                        est festus
-                        verpa?</h2>
+                    <h2 class="section-title mt-8">Ubi est festus verpa?</h2>
                     <p class="mt-5">
                         Nulla sit amet enim id eros malesuada porta. Phasellus porttitor posuere urna, id facilisis sem
                         euismod nec. Nunc a dolor et enim congue commodo. Donec pharetra commodo dolor, sed euismod
@@ -132,25 +136,26 @@
             </article>
         </section>
 
-        <x-motivation/>
+        <x-motivation></x-motivation>
 
         <!-- Form -->
         <section
             class="w-full flex items-center min-h-[calc(100vh-56px)] py-8 px-4 md:min-h-[calc(100vh-64px)] md:px-20 lg:min-h-[calc(100vh-72px)] lg:px-0"
-            id="form">
+            id="form"
+        >
             <div class="mx-auto max-w-4xl">
                 <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:items-baseline">
-                    <h2 class="text-theme-dark dark:text-white font-title text-4xl font-bold">{{ __('index.form_title') }}</h2>
+                    <h2 class="section-title">{{ __('index.form_title') }}</h2>
                     <p class="text-xl">
                         {{ __('index.subtitle.already') }}
-                        <span
-                            class="bg-theme text-white p-1">{!! __('index.subtitle.sign_count', ['count' => $count]) !!}</span>
+                        <span class="bg-theme text-white p-1"
+                        >{!! __('index.subtitle.sign_count', ['count' => $count]) !!}</span>
                     </p>
                 </div>
-                <x-form/>
+                <x-form></x-form>
             </div>
         </section>
 
-        <x-sponsors/>
+        <x-sponsors></x-sponsors>
     </main>
 @endsection

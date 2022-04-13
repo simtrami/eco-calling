@@ -12,19 +12,19 @@ class Table extends Component
     /**
      * @var array
      */
-    public $columns;
+    public array $columns;
 
     /**
      * @var array|Model
      */
-    public $elements;
+    public array|Model $elements;
 
     /**
      * Table constructor.
      * @param array $columns
      * @param array|Model $elements
      */
-    public function __construct(array $columns, $elements)
+    public function __construct(array $columns, Model|array $elements)
     {
         $this->columns = $columns;
         $this->elements = $elements;
@@ -33,9 +33,9 @@ class Table extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return View|Closure|string
+     * @return View|string|Closure
      */
-    public function render()
+    public function render(): View|string|Closure
     {
         return view('components.table');
     }

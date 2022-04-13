@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Models\Signature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -21,12 +20,12 @@ class RoutingTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertOk();
     }
 
     /**
      * GET signatures
-     * Reach the signatures page with success
+     * Reach the signature page with success
      *
      * @return void
      */
@@ -34,7 +33,7 @@ class RoutingTest extends TestCase
     {
         $response = $this->get('/signatures');
 
-        $response->assertStatus(200);
+        $response->assertOk();
     }
 
     /**
@@ -52,8 +51,19 @@ class RoutingTest extends TestCase
             'register' => 'on',
         ]);
 
-        $response->assertStatus(302);
+        $response->assertValid([
+            'first_name',
+            'last_name',
+            'email',
+            'register',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 1);
+        $this->assertDatabaseHas('signatures', [
+            'first_name' => 'Foo',
+            'last_name' => 'Bar',
+            'email' => 'foo@bar.tld',
+        ]);
     }
 
     /**
@@ -70,7 +80,15 @@ class RoutingTest extends TestCase
             'register' => 'on',
         ]);
 
-        $response->assertStatus(302);
+        $response->assertValid([
+            'last_name',
+            'email',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'first_name',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 }

@@ -66,7 +66,7 @@ class Signature extends Model implements MustVerifyEmail
      * @param $query
      * @return mixed
      */
-    public function scopeConfirmed($query)
+    public function scopeConfirmed($query): mixed
     {
         return $query->whereNotNull('email_verified_at')->latest();
     }
@@ -77,7 +77,7 @@ class Signature extends Model implements MustVerifyEmail
      * @param $query
      * @return mixed
      */
-    public function scopePending($query)
+    public function scopePending($query): mixed
     {
         return $query->whereNull('email_verified_at')->latest();
     }

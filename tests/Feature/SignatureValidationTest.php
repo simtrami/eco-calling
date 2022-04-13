@@ -18,13 +18,20 @@ class SignatureValidationTest extends TestCase
      */
     public function testSign(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => 'Foo',
             'last_name' => 'Bar',
             'email' => 'foo@bar.tld',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'last_name',
+            'email',
+            'register',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseHas('signatures', [
             'first_name' => 'Foo',
             'last_name' => 'Bar',
@@ -40,12 +47,21 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignMissing1(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'last_name' => 'Bar',
             'email' => 'foo@bar.tld',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'last_name',
+            'email',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'first_name',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -56,12 +72,21 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignMissing2(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => 'Foo',
             'email' => 'foo@bar.tld',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'email',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'last_name',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -72,12 +97,21 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignMissing3(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => 'Foo',
             'last_name' => 'Bar',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'last_name',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'email',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -88,12 +122,21 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignMissing4(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => 'Foo',
             'last_name' => 'Bar',
             'email' => 'foo@bar.tld',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'last_name',
+            'email',
+        ]);
+        $response->assertInvalid([
+            'register',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -104,13 +147,22 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignEmpty1(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => '',
             'last_name' => 'Bar',
             'email' => 'foo@bar.tld',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'last_name',
+            'email',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'first_name',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -121,13 +173,22 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignEmpty2(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => 'Foo',
             'last_name' => '',
             'email' => 'foo@bar.tld',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'email',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'last_name',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -138,13 +199,22 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignEmpty3(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => 'Foo',
             'last_name' => 'Bar',
             'email' => '',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'last_name',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'email',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -155,13 +225,22 @@ class SignatureValidationTest extends TestCase
      */
     public function testSignEmpty4(): void
     {
-        $this->post('/', [
+        $response = $this->post('/', [
             'first_name' => 'Foo',
             'last_name' => 'Bar',
             'email' => 'foo@bar.tld',
             'register' => '',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'last_name',
+            'email',
+        ]);
+        $response->assertInvalid([
+            'register',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 0);
     }
 
@@ -173,31 +252,37 @@ class SignatureValidationTest extends TestCase
     public function testEmailNotUnique(): void
     {
         $signature = new Signature();
-        $signature->first_name = 'Foo';
-        $signature->last_name = 'Bar';
+        $signature->first_name = 'Bar';
+        $signature->last_name = 'Foo';
         $signature->email = 'foo@bar.tld';
         $signature->save();
 
+        $this->assertDatabaseCount('signatures', 1);
         $this->assertDatabaseHas('signatures', [
-            'first_name' => 'Foo',
-            'last_name' => 'Bar',
+            'first_name' => 'Bar',
             'email' => 'foo@bar.tld',
-            'email_verified_at' => null,
         ]);
 
-        $this->post('/', [
-            'first_name' => 'Bar',
-            'last_name' => 'Foo',
+        $response = $this->post('/', [
+            'first_name' => 'Foo',
+            'last_name' => 'Bar',
             'email' => 'foo@bar.tld',
             'register' => 'on',
         ]);
 
+        $response->assertValid([
+            'first_name',
+            'last_name',
+            'register',
+        ]);
+        $response->assertInvalid([
+            'email',
+        ]);
+        $response->assertRedirect('/');
         $this->assertDatabaseCount('signatures', 1);
         $this->assertDatabaseMissing('signatures', [
-            'first_name' => 'Bar',
-            'last_name' => 'Foo',
+            'first_name' => 'Foo',
             'email' => 'foo@bar.tld',
-            'email_verified_at' => null,
         ]);
     }
 }

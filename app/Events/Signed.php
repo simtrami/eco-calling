@@ -16,7 +16,7 @@ class Signed
      *
      * @var Signature
      */
-    public $signature;
+    public Signature $signature;
 
     /**
      * Create a new event instance.

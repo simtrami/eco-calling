@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a7b72b05e4b799a1da1eaa032056dc4",
+    "content-hash": "2c51b66e7281e148441c3b695ce616a6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9683,8 +9683,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "fzaninotto/faker": 20
+        "fzaninotto/faker": 20,
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

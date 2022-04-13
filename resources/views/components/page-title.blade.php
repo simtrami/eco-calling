@@ -18,11 +18,7 @@
             onclick="{!! $scrollButtonAction !!}"
         >
             <span class="font-semibold lg:text-lg">{!! $scrollButtonText !!}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="animate-bounce h-6 w-6 mx-auto mt-4 lg:h-8 lg:w-8"
-                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
+            <x-icons.down class="animate-bounce h-6 w-6 mx-auto mt-4 lg:h-8 lg:w-8"></x-icons.down>
         </button>
     </div>
 </section>

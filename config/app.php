@@ -28,6 +28,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'announcement' => env('ANNOUNCEMENT', null),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

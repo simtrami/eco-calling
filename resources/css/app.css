@@ -20,6 +20,7 @@
         font-weight: normal;
         font-style:  normal;
     }
+
     [type='text'], [type='search'], textarea, [type='number'],
     [type='password'], [type='email'], [type='url'], [type='tel'],
     [type='date'], [type='datetime-local'], [type='time'], [type='month'], [type='week'],
@@ -27,17 +28,18 @@
         @apply
         bg-white dark:bg-dark
         w-full
-        rounded-md border-0 focus:border-b focus:border-b-theme
-        shadow-sm dark:shadow-none focus:shadow-lg dark:focus:shadow-none
+        rounded-md border-0 border-b border-b-gray-300 border-gray-400 focus:border-b-theme
+        dark:border-b-gray-700 dark:focus:border-b-theme-light
+        shadow-sm focus:shadow-lg dark:shadow-none dark:focus:shadow-none
         focus:outline-none focus:ring-0
         transition;
     }
 
     [type='checkbox'], [type='radio'] {
         @apply
-        text-theme
+        text-theme dark:text-theme-light
         rounded border-gray-400
-        focus:ring-theme focus:ring-offset-white dark:focus:ring-offset-darker
+        focus:ring-theme focus:ring-offset-white dark:focus:ring-theme-light dark:focus:ring-offset-darker
         transition;
     }
 }

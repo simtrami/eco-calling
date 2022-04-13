@@ -33,15 +33,19 @@
 
 <body class="bg-white text-gray-800 selection:bg-theme-light dark:bg-darker dark:text-white font-body">
 
-<x-nav/>
+@if(config('app.announcement'))
+    <x-announcement>{!! config('app.announcement') !!}</x-announcement>
+@endif
+
+<x-nav></x-nav>
 
 @if (session('success'))
-    <x-success/>
+    <x-success></x-success>
 @endif
 
 @yield('content')
 
-<x-footer/>
+<x-footer></x-footer>
 
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')

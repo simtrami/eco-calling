@@ -15,7 +15,7 @@
             <x-slot name="scrollButtonAction">scrollToTargetAdjusted('signatures')</x-slot>
         </x-page-title>
 
-        <x-motivation/>
+        <x-motivation></x-motivation>
 
         <!-- Signatures -->
         <section
@@ -47,6 +47,6 @@
             </div>
         </section>
 
-        <x-sponsors/>
+        <x-sponsors></x-sponsors>
     </main>
 @endsection

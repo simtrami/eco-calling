@@ -6,8 +6,6 @@ use App\Models\Signature;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\URL;
 
@@ -20,14 +18,14 @@ class VerifySignature extends Notification
      *
      * @var Signature
      */
-    public $signature;
+    public Signature $signature;
 
     /**
      * The generated temporary verification url.
      *
      * @var string
      */
-    public $verificationUrl;
+    public string $verificationUrl;
 
     /**
      * Create a new notification instance.
@@ -48,9 +46,8 @@ class VerifySignature extends Notification
      */
     protected function generateVerificationUrl(Signature $signature): void
     {
-        $this->verificationUrl = URL::temporarySignedRoute(
+        $this->verificationUrl = URL::signedRoute(
             'signatures.verify',
-            Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
             [
                 'id' => $signature->getKey(),
                 'hash' => sha1($signature->getEmailForVerification()),
@@ -64,7 +61,7 @@ class VerifySignature extends Notification
      * @param mixed $notifiable
      * @return array
      */
-    public function via($notifiable): array
+    public function via(mixed $notifiable): array
     {
         return ['mail'];
     }
@@ -78,11 +75,16 @@ class VerifySignature extends Notification
     public function toMail(Signature $signature): MailMessage
     {
         return (new MailMessage)
+            ->replyTo(env('MAIL_REPLY_TO_ADDRESS'), env('MAIL_REPLY_TO_NAME'))
             ->subject(Lang::get('mail.subject'))
-            ->greeting(Lang::get('mail.greeting'))
+            ->greeting(Lang::get('mail.greeting',
+                ['firstName' => $signature->first_name]))
             ->line(Lang::get('mail.confirm'))
             ->action(Lang::get('mail.button'), $this->verificationUrl)
-            ->line(Lang::get('mail.dismiss'));
+            ->line(Lang::get('mail.dismiss'))
+            ->salutation(Lang::get('mail.salutation',
+                ['name' => env('MAIL_FROM_NAME')])
+            );
     }
 
     /**

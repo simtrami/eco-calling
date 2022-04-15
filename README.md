@@ -7,8 +7,9 @@
 
 ## Development
 
-This project uses the [Laravel](https://laravel.com/) framework. Please, refer to the documentation version 9.x for
-contributing to the project.
+This project uses the [Laravel 9](https://laravel.com/) framework with [TailwindCSS 3](https://tailwindcss.com) for
+styling.
+Please, refer to the appropriate documentations for contributing to the project.
 
 ### Environment
 

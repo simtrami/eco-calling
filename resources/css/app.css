@@ -28,8 +28,8 @@
         @apply
         bg-white dark:bg-dark
         w-full
-        rounded-md border-0 border-b border-b-gray-300 border-gray-400 focus:border-b-theme
-        dark:border-b-gray-700 dark:focus:border-b-theme-light
+        rounded-md border-0 border-b border-b-zinc-300 border-zinc-400 focus:border-b-theme
+        dark:border-b-zinc-700 dark:focus:border-b-theme-light
         shadow-sm focus:shadow-lg dark:shadow-none dark:focus:shadow-none
         focus:outline-none focus:ring-0
         transition;
@@ -38,7 +38,7 @@
     [type='checkbox'], [type='radio'] {
         @apply
         text-theme dark:text-theme-light
-        rounded border-gray-400
+        rounded border-zinc-400
         focus:ring-theme focus:ring-offset-white dark:focus:ring-theme-light dark:focus:ring-offset-darker
         transition;
     }

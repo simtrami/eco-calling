@@ -8,7 +8,7 @@
     py-0 px-2 md:px-4 md:py-1 lg:py-2"
     id="nav"
 >
-    <a class="dark:text-theme-light transition filter hover:drop-shadow transform focus:outline-none motion-safe:focus:scale-110"
+    <a class="dark:text-theme-light transition hover:drop-shadow focus:outline-none motion-safe:focus:scale-110"
        href="{{ route('home') }}"
     >
         <x-icons.logo class="h-7 sm:h-9 lg:h-11"></x-icons.logo>
@@ -17,7 +17,7 @@
     <div class="font-medium flex items-center space-x-4 ml-auto sm:space-x-6 md:space-x-9">
         {{--Manifesto--}}
         <a class="{{ Route::is('home') ? 'text-theme-dark dark:text-theme-light md:text-theme md:dark:text-white md:font-bold' : '' }}
-            flex space-x-1 transition hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
+            flex space-x-1 transition hover:text-theme-dark dark:hover:text-zinc-300 focus:outline-none focus:underline"
            href="{{ route('home') }}"
         >
             <x-icons.document class="stroke-2 h-5 w-5"></x-icons.document>
@@ -25,14 +25,14 @@
         </a>
         {{--Signatures--}}
         <a class="{{ Route::is('signatures') ? 'text-theme-dark dark:text-theme-light md:text-theme md:dark:text-white md:font-bold' : '' }}
-            flex space-x-1 transition hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
+            flex space-x-1 transition hover:text-theme-dark dark:hover:text-zinc-300 focus:outline-none focus:underline"
            href="{{ route('signatures') }}"
         >
             <x-icons.people class="stroke-2 h-5 w-5"></x-icons.people>
             <p class="hidden md:block">{{ __('header.signatures') }}</p>
         </a>
         {{--External--}}
-        <a class="flex space-x-1 transition hover:text-theme-dark dark:hover:text-gray-300 focus:outline-none focus:underline"
+        <a class="flex space-x-1 transition hover:text-theme-dark dark:hover:text-zinc-300 focus:outline-none focus:underline"
            href="{{ env('LINK_OFFICIAL_WEBSITE') }}"
            target="_blank"
         >
@@ -41,7 +41,7 @@
         </a>
         {{--Sign--}}
         <a
-            class="flex space-x-1 btn text-sm rounded-full border-theme dark:border-white bg-theme dark:bg-white text-white dark:text-gray-800 hover:bg-white dark:hover:bg-dark hover:text-theme dark:hover:text-white focus:ring-theme dark:focus:ring-white focus:ring-offset-white dark:focus:ring-offset-dark md:h-auto md:px-4 lg:text-base"
+            class="flex space-x-1 btn text-sm rounded-full border-theme dark:border-white bg-theme dark:bg-white text-white dark:text-zinc-800 hover:bg-white dark:hover:bg-dark hover:text-theme dark:hover:text-white focus:ring-theme dark:focus:ring-white focus:ring-offset-white dark:focus:ring-offset-dark md:h-auto md:px-4 lg:text-base"
             @if(Route::is('home'))
             onclick="scrollToForm()" href="javascript:void(0)"
             @else

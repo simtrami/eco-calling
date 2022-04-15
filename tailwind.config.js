@@ -1,10 +1,9 @@
 module.exports = {
-    mode: 'jit',
-    purge: [
+    content: [
         './resources/**/*.blade.php',
         './resources/js/*.js',
     ],
-    darkMode: 'class', // or 'media' or false
+    darkMode: 'class', // or 'media'
     theme: {
         extend: {
             colors: {
@@ -28,12 +27,6 @@ module.exports = {
                 '5/12': '41.666667%',
                 '3/12': '25%',
             },
-        },
-    },
-    variants: {
-        animation: ['motion-safe'],
-        extend: {
-            animation: ['hover'],
         },
     },
     plugins: [require('@tailwindcss/forms')],

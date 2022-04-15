@@ -8,7 +8,7 @@
             </div>
             <nav class="space-x-2 text-xl sm:text-2xl" aria-label="{{ __('footer.select_languages') }}">
                 <a
-                    class="inline-block transition transform motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
+                    class="inline-block transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
                     @if(LaravelLocalization::getCurrentLocale() === 'en')
                     href="{{ LaravelLocalization::getLocalizedURL('fr') }}"
                     title="Passer en {{ LaravelLocalization::getSupportedLocales()['fr']['native'] }}"
@@ -47,19 +47,19 @@
                     </a>
                 </div>
                 <div class="md:text-right">
-                    <p><a class="font-semibold hover:text-gray-200 focus:outline-none focus:underline"
+                    <p><a class="font-semibold hover:text-zinc-200 focus:outline-none focus:underline"
                           href="{{ env('LINK_ABOUT_US') }}" target="_blank"
                         >{{ __('footer.about') }}</a></p>
                 </div>
             </div>
             <div class="flex flex-col mt-4 space-y-4 md:flex-row md:justify-between md:space-y-0">
                 <address>
-                    <a class="font-semibold not-italic hover:text-gray-200 focus:outline-none focus:underline"
+                    <a class="font-semibold not-italic hover:text-zinc-200 focus:outline-none focus:underline"
                        href="mailto:{{ env('MAIL_REPLY_TO_ADDRESS') }}"
                     >{{ env('MAIL_REPLY_TO_ADDRESS') }}</a>
                 </address>
                 <div class="md:text-right">
-                    <a class="font-semibold hover:text-gray-200 focus:outline-none focus:underline"
+                    <a class="font-semibold hover:text-zinc-200 focus:outline-none focus:underline"
                        href="{{ env('LINK_PRIVACY') }}" target="_blank"
                     >{{ __('footer.privacy') }}</a>
                 </div>

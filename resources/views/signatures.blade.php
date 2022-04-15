@@ -22,7 +22,7 @@
             class="w-full flex items-center min-h-[calc(100vh-56px)] py-8 px-4 md:min-h-[calc(100vh-64px)] md:px-20 lg:min-h-[calc(100vh-72px)] lg:px-0"
             id="signatures"
         >
-            <article class="flex-grow mx-auto max-w-4xl">
+            <article class="grow mx-auto max-w-4xl">
                 <h2 class="section-title mb-6">{{ __('signatures.table.title') }}</h2>
 
                 <x-table :columns="[__('signatures.table.columns.names') => 'full_name']"

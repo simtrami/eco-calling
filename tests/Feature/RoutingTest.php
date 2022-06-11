@@ -1,156 +1,68 @@
 <?php
 
-namespace Tests\Feature;
-
 use App\Models\Signature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
+use function Pest\Laravel\assertDatabaseCount;
+use function Pest\Laravel\assertDatabaseHas;
+use function Pest\Laravel\followingRedirects;
+use function Pest\Laravel\get;
+use function Pest\Laravel\post;
 
-class RoutingTest extends TestCase
-{
-    use RefreshDatabase, WithFaker;
+uses(RefreshDatabase::class);
+uses(WithFaker::class);
 
-    /**
-     * GET home
-     * Reach the home page with success
-     *
-     * @return void
-     */
-    public function testGetHome(): void
-    {
-        $response = $this->get('/');
+it('has a manifesto page')->get('/')->assertOk();
+it('registers a new signature when posted correctly', function () {
+    followingRedirects()->post('/', [
+        'first_name' => 'Foo',
+        'last_name' => 'Bar',
+        'email' => 'foo@bar.tld',
+        'register' => 'on',
+    ])->assertValid([
+        'first_name',
+        'last_name',
+        'email',
+        'register',
+    ])->assertSee(__('success.title'));
 
-        $response->assertOk();
-    }
+    assertDatabaseCount('signatures', 1);
+    assertDatabaseHas('signatures', [
+        'first_name' => 'Foo',
+        'last_name' => 'Bar',
+        'email' => 'foo@bar.tld',
+    ]);
+});
+it('does not register a new signature when posted incorrectly', function () {
+    post('/', [
+        'last_name' => 'Bar',
+        'email' => 'foo@bar.tld',
+        'register' => 'on',
+    ])->assertValid([
+        'last_name',
+        'email',
+        'register',
+    ])->assertInvalid([
+        'first_name',
+    ])->assertRedirect('/');
 
-    /**
-     * GET signatures
-     * Reach the signature page with success
-     * There is no signatures
-     *
-     * @return void
-     */
-    public function testGetSignatures1(): void
-    {
-        $response = $this->get('/signatures');
+    assertDatabaseCount('signatures', 0);
+});
 
-        $response->assertOk();
-    }
-
-    /**
-     * GET signatures
-     * Reach the signature page with success
-     * There is one page of signatures
-     *
-     * @return void
-     */
-    public function testGetSignatures2(): void
-    {
-        Signature::factory()->confirmed()->count(10);
-        $response = $this->get('/signatures');
-
-        $response->assertOk();
-    }
-
-    /**
-     * GET signatures?page=1
-     * Reach the signatures' first page with success
-     * There are two pages of signatures
-     *
-     * @return void
-     */
-    public function testGetSignatures3(): void
-    {
-        Signature::factory()->confirmed()->count(20);
-        $response = $this->get('/signatures');
-
-        $response->assertOk();
-    }
-
-    /**
-     * GET signatures?page=2
-     * Reach the signatures' second page with success
-     * There are two pages of signatures
-     *
-     * @return void
-     */
-    public function testGetSignatures4(): void
-    {
-        Signature::factory()->confirmed()->count(20);
-        $response = $this->get('/signatures?page=2');
-
-        $response->assertOk();
-    }
-
-    /**
-     * GET signatures?page=3
-     * Reach the signatures' third page with success
-     * There are two pages of signatures
-     *
-     * @return void
-     */
-    public function testGetSignatures5(): void
-    {
-        Signature::factory()->confirmed()->count(20);
-        $response = $this->get('/signatures?page=3');
-
-        $response->assertOk();
-    }
-
-    /**
-     * POST sign
-     * Submit a healthy signing form
-     *
-     * @return void
-     */
-    public function testPostSign1(): void
-    {
-        $response = $this->post('/', [
-            'first_name' => 'Foo',
-            'last_name' => 'Bar',
-            'email' => 'foo@bar.tld',
-            'register' => 'on',
-        ]);
-
-        $response->assertValid([
-            'first_name',
-            'last_name',
-            'email',
-            'register',
-        ]);
-        $response->assertRedirect('/');
-        $this->assertDatabaseCount('signatures', 1);
-        $this->assertDatabaseHas('signatures', [
-            'first_name' => 'Foo',
-            'last_name' => 'Bar',
-            'email' => 'foo@bar.tld',
-        ]);
-    }
-
-    /**
-     * POST sign
-     * Submit an incorrect signing form
-     *
-     * @return void
-     */
-    public function testPostSign2(): void
-    {
-        $response = $this->post('/', [
-            'last_name' => 'Bar',
-            'email' => 'foo@bar.tld',
-            'register' => 'on',
-        ]);
-
-        $response->assertValid([
-            'last_name',
-            'email',
-            'register',
-        ]);
-        $response->assertInvalid([
-            'first_name',
-        ]);
-        $response->assertRedirect('/');
-        $this->assertDatabaseCount('signatures', 0);
-    }
-}
+it('has a signature page')->get('/signatures')->assertOk();
+it('has a signature page when there are 10 signatures', function () {
+    Signature::factory()->confirmed()->count(10)->create();
+    get('/signatures')->assertOk();
+});
+it('has a first signature page where there are 20 signatures', function () {
+    Signature::factory()->confirmed()->count(20)->create();
+    get('/signatures?page=1')->assertOk();
+});
+it('has a second signature page where there are 20 signatures', function () {
+    Signature::factory()->confirmed()->count(20)->create();
+    get('/signatures?page=2')->assertOk();
+});
+it('has a third signature page where there are 20 signatures', function () {
+    Signature::factory()->confirmed()->count(20)->create();
+    get('/signatures?page=3')->assertOk();
+});

@@ -6,7 +6,6 @@ use App\Models\Signature;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\URL;
 
 class VerifySignature extends Notification
@@ -75,16 +74,16 @@ class VerifySignature extends Notification
     public function toMail(Signature $signature): MailMessage
     {
         return (new MailMessage)
-            ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
-            ->replyTo(env('MAIL_REPLY_TO_ADDRESS'), env('MAIL_REPLY_TO_NAME'))
-            ->subject(Lang::get('mail.subject'))
-            ->greeting(Lang::get('mail.greeting',
+            ->from(config('mail.from.address'), config('mail.from.name'))
+            ->replyTo(config('mail.reply_to.address'), config('mail.reply_to.name'))
+            ->subject(__('mail.subject'))
+            ->greeting(__('mail.greeting',
                 ['firstName' => $signature->first_name]))
-            ->line(Lang::get('mail.confirm'))
-            ->action(Lang::get('mail.button'), $this->verificationUrl)
-            ->line(Lang::get('mail.dismiss'))
-            ->salutation(Lang::get('mail.salutation',
-                ['name' => env('MAIL_FROM_NAME')])
+            ->line(__('mail.confirm'))
+            ->action(__('mail.button'), $this->verificationUrl)
+            ->line(__('mail.dismiss'))
+            ->salutation(__('mail.salutation',
+                    ['name' => config('app.our-name')])
             );
     }
 
@@ -99,7 +98,7 @@ class VerifySignature extends Notification
         $this->signature = $signature;
         $this->generateVerificationUrl($this->signature);
         return [
-            'subject' => Lang::get('mail.subject'),
+            'subject' => __('mail.subject'),
             'action' => $this->verificationUrl,
         ];
     }

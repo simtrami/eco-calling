@@ -4,16 +4,16 @@
             class="flex flex-col-reverse items-center space-y-4 space-y-reverse sm:flex-row sm:justify-between sm:space-y-0"
         >
             <div>
-                <p>© {{ date('Y') }} - {{ env('OUR_NAME') }}</p>
+                <p>{{ date('Y') }} - {{ config('app.copyright') }}</p>
             </div>
             <nav class="space-x-2 text-xl sm:text-2xl" aria-label="{{ __('footer.select_languages') }}">
                 <a
                     class="inline-block transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
                     @if(LaravelLocalization::getCurrentLocale() === 'en')
-                    href="{{ LaravelLocalization::getLocalizedURL('fr') }}"
+                        href="{{ LaravelLocalization::getLocalizedURL('fr') }}"
                     title="Passer en {{ LaravelLocalization::getSupportedLocales()['fr']['native'] }}"
                     @else
-                    href="{{ LaravelLocalization::getLocalizedURL('en') }}"
+                        href="{{ LaravelLocalization::getLocalizedURL('en') }}"
                     title="Switch to {{ LaravelLocalization::getSupportedLocales()['en']['native'] }}"
                     @endif
                 >
@@ -25,42 +25,42 @@
             <div class="flex flex-col space-y-6 md:flex-row md:justify-between md:space-y-0">
                 <div class="flex flex-row justify-center space-x-8">
                     <a class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                       href="{{ env('LINK_FACEBOOK') }}"
+                       href="{{ config('app.socials.facebook.account-url') }}"
                        target="_blank" title="Facebook"
                     >
                         <x-icons.facebook class="h-6 w-6"></x-icons.facebook>
                     </a> <a
                         class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                        href="{{ env('LINK_TWITTER') }}" target="_blank" title="Twitter"
+                        href="{{ config('app.socials.twitter.account-url') }}" target="_blank" title="Twitter"
                     >
                         <x-icons.twitter class="h-6 w-6"></x-icons.twitter>
                     </a> <a
                         class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                        href="{{ env('LINK_INSTAGRAM') }}" target="_blank" title="Instagram"
+                        href="{{ config('app.socials.instagram.account-url') }}" target="_blank" title="Instagram"
                     >
                         <x-icons.instagram class="h-6 w-6"></x-icons.instagram>
                     </a> <a
                         class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                        href="{{ env('LINK_LINKEDIN') }}" target="_blank" title="LinkedIn"
+                        href="{{ config('app.socials.linkedin.account-url') }}" target="_blank" title="LinkedIn"
                     >
                         <x-icons.linkedin class="h-6 w-6"></x-icons.linkedin>
                     </a>
                 </div>
                 <div class="md:text-right">
                     <p><a class="font-semibold hover:text-zinc-200 focus:outline-none focus:underline"
-                          href="{{ env('LINK_ABOUT_US') }}" target="_blank"
+                          href="{{ config('app.links.about-us') }}" target="_blank"
                         >{{ __('footer.about') }}</a></p>
                 </div>
             </div>
             <div class="flex flex-col mt-4 space-y-4 md:flex-row md:justify-between md:space-y-0">
                 <address>
                     <a class="font-semibold not-italic hover:text-zinc-200 focus:outline-none focus:underline"
-                       href="mailto:{{ env('MAIL_REPLY_TO_ADDRESS') }}"
-                    >{{ env('MAIL_REPLY_TO_ADDRESS') }}</a>
+                       href="mailto:{{ config('app.mail-info.reply-to.address') }}"
+                    >{{ config('app.mail-info.reply-to.address') }}</a>
                 </address>
                 <div class="md:text-right">
                     <a class="font-semibold hover:text-zinc-200 focus:outline-none focus:underline"
-                       href="{{ env('LINK_PRIVACY') }}" target="_blank"
+                       href="{{ config('app.links.privacy') }}" target="_blank"
                     >{{ __('footer.privacy') }}</a>
                 </div>
             </div>
@@ -80,8 +80,8 @@
                 <p>
                     {{ __('footer.signature.who') }}
                     <a class="font-semibold hover:animate-pulse focus:outline-none focus:underline" target="_blank"
-                       href="{{ env('APP_AUTHOR_URL') }}"
-                    >{{ env('APP_AUTHOR') }}</a>
+                       href="{{ config('app.author.url') }}"
+                    >{{ config('app.author.name') }}</a>
                     {{ __('footer.signature.what') }}
                 </p>
                 <a class="transition hover:animate-pulse focus:outline-none motion-safe:focus:scale-125"

@@ -11,6 +11,7 @@ return [
     'table' => [
         'title' => 'The signatories',
         'empty' => "There is no signature.",
+        'out_of_range' => "The requested page is out of range.",
         'columns' => [
             'names' => 'Names'
         ]

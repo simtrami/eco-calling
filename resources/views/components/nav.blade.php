@@ -33,7 +33,7 @@
         </a>
         {{--External--}}
         <a class="flex space-x-1 transition hover:text-theme-dark dark:hover:text-zinc-300 focus:outline-none focus:underline"
-           href="{{ env('LINK_OFFICIAL_WEBSITE') }}"
+           href="{{ config('app.links.website') }}"
            target="_blank"
         >
             <x-icons.github class="h-5 w-5"></x-icons.github>
@@ -43,7 +43,7 @@
         <a
             class="flex space-x-1 btn text-sm rounded-full border-theme dark:border-white bg-theme dark:bg-white text-white dark:text-zinc-800 hover:bg-white dark:hover:bg-dark hover:text-theme dark:hover:text-white focus:ring-theme dark:focus:ring-white focus:ring-offset-white dark:focus:ring-offset-dark md:h-auto md:px-4 lg:text-base"
             @if(Route::is('home'))
-            onclick="scrollToForm()" href="javascript:void(0)"
+                onclick="scrollToForm()" href="javascript:void(0)"
             @else
             href="{{ route('home') }}#form"
             @endif

@@ -11,6 +11,7 @@ return [
     'table' => [
         'title' => 'Les signataires',
         'empty' => "Il n'y a pas encore de signature.",
+        'out_of_range' => "La page demandée est hors-scope.",
         'columns' => [
             'names' => 'Noms'
         ]

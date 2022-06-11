@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Notifications\VerifySignature;
+use Database\Factories\SignatureFactory;
 use Eloquent;
 use Illuminate\Auth\MustVerifyEmail as VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -39,6 +40,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Signature whereId($value)
  * @method static Builder|Signature whereLastName($value)
  * @method static Builder|Signature whereUpdatedAt($value)
+ * @method static SignatureFactory factory(...$parameters)
  * @mixin Eloquent
  */
 class Signature extends Model implements MustVerifyEmail

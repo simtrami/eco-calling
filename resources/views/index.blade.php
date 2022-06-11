@@ -1,6 +1,8 @@
 @extends('layout')
 
-@section('title'){{ __('index.page_title', ['app_name' => env('APP_NAME')]) }}@endsection
+@section('title')
+    {{ __('index.page_title', ['app_name' => config('app.name')]) }}
+@endsection
 
 @section('scripts')
     <script src="{{ mix('js/index.js') }}"></script>
@@ -54,22 +56,26 @@
                 <hr class="border-theme-light opacity-30 w-full my-4"/>
                 <div class="flex flex-col space-y-6 px-2.5 mx-0">
                     <a class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                       href="{{ env('LINK_POST_FB') }}" target="_blank" title="{{ __('socials.facebook') }}"
+                       href="{{ config('app.socials.facebook.post') }}" target="_blank"
+                       title="{{ __('socials.facebook') }}"
                     >
                         <x-icons.facebook class="h-5 w-5"></x-icons.facebook>
                     </a> <a
                         class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                        href="{{ env('LINK_POST_TW') }}" target="_blank" title="{{ __('socials.twitter') }}"
+                        href="{{ config('app.socials.twitter.post') }}" target="_blank"
+                        title="{{ __('socials.twitter') }}"
                     >
                         <x-icons.twitter class="h-5 w-5"></x-icons.twitter>
                     </a> <a
                         class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                        href="{{ env('LINK_POST_INSTA') }}" target="_blank" title="{{ __('socials.instagram') }}"
+                        href="{{ config('app.socials.instagram.post') }}" target="_blank"
+                        title="{{ __('socials.instagram') }}"
                     >
                         <x-icons.instagram class="h-5 w-5"></x-icons.instagram>
                     </a> <a
                         class="transition motion-safe:hover:scale-125 focus:outline-none motion-safe:focus:scale-125"
-                        href="{{ env('LINK_POST_LIN') }}" target="_blank" title="{{ __('socials.linkedin') }}"
+                        href="{{ config('app.socials.linkedin.post') }}" target="_blank"
+                        title="{{ __('socials.linkedin') }}"
                     >
                         <x-icons.linkedin class="h-5 w-5"></x-icons.linkedin>
                     </a>

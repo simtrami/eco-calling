@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{{ asset('images/favicon.png') }}"/>
 
-    <title>@yield('title', env('APP_TITLE'))</title>
+    <title>@yield('title', config('app.name'))</title>
 
-    <link rel="canonical" href="{{ env('APP_URL') }}">
+    <link rel="canonical" href="{{ config('app.url') }}">
 
     <!-- SEO -->
-    <meta property="description" content="{{ env('SEO_DESCRIPTION') }}"/>
-    <meta name="author" content="{{ env('APP_AUTHOR') }}">
-    <meta name="title" content="{{ env('SEO_TITLE') }}">
-    <meta property="og:url" content={{ env('APP_URL') }}/>
+    <meta property="description" content="{{ config('app.seo.description') }}"/>
+    <meta name="author" content="{{ config('app.author.name') }}">
+    <meta name="title" content="{{ config('app.seo.title') }}">
+    <meta property="og:url" content={{ config('app.url') }}/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="{{ env('SEO_TITLE') }}"/>
-    <meta property="og:image" content="{{ env('SEO_IMAGE') }}">
-    <meta property="og:image:type" content="{{ env('SEO_IMAGE_TYPE') }}">
-    <meta property="og:image:width" content="{{ env('SEO_IMAGE_WIDTH') }}">
-    <meta property="og:image:height" content="{{ env('SEO_IMAGE_HEIGHT') }}">
-    <meta property="og:description" content="{{ env('SEO_DESCRIPTION') }}"/>
+    <meta property="og:title" content="{{ config('app.seo.title') }}"/>
+    <meta property="og:image" content="{{ config('app.seo.image.url') }}">
+    <meta property="og:image:type" content="{{ config('app.seo.image.type') }}">
+    <meta property="og:image:width" content="{{ config('app.seo.image.width') }}">
+    <meta property="og:image:height" content="{{ config('app.seo.image.height') }}">
+    <meta property="og:description" content="{{ config('app.seo.description') }}"/>
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="{{ env('TWITTER_USER') }}">
-    <meta name="twitter:title" content="{{ env('SEO_TITLE') }}">
-    <meta property="twitter:image" content="{{ env('SEO_IMAGE') }}"/>
+    <meta name="twitter:site" content="{{ config('app.socials.twitter.account-name') }}">
+    <meta name="twitter:title" content="{{ config('app.seo.title') }}">
+    <meta property="twitter:image" content="{{ config('app.seo.image.url') }}"/>
 
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     @yield('stylesheets')

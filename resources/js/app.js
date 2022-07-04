@@ -13,7 +13,7 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 }
 
 window.toggleDarkMode = function () {
-    if (localStorage.theme === 'dark') {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         localStorage.theme = 'light';
     } else {
         localStorage.theme = 'dark';

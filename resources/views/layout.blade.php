@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="{{ config('app.seo.title') }}">
     <meta property="twitter:image" content="{{ config('app.seo.image.url') }}"/>
 
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('stylesheets')
 </head>
 
@@ -47,7 +47,6 @@
 
 <x-footer></x-footer>
 
-<script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')
 
 </body>

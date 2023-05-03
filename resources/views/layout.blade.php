@@ -27,6 +27,9 @@
     <meta name="twitter:title" content="{{ config('app.seo.title') }}">
     <meta property="twitter:image" content="{{ config('app.seo.image.url') }}"/>
 
+    <!-- Analytics -->
+    {!! config('app.analytics.script')  !!}
+
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     @yield('stylesheets')
 </head>

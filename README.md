@@ -3,7 +3,8 @@
 [![Laravel Continuous Integration](https://github.com/simtrami/eco-calling/actions/workflows/integrate.yml/badge.svg)](https://github.com/simtrami/eco-calling/actions/workflows/integrate.yml)
 [![Laravel Continuous Deployment](https://github.com/simtrami/eco-calling/actions/workflows/deploy.yml/badge.svg)](https://github.com/simtrami/eco-calling/actions/workflows/deploy.yml)
 
-[Demo website](https://eco-calling.simtrami.net)
+[Demo website](https://eco-calling.simtrami.net)  
+[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F3be9c504-0b12-4892-82d3-112026a3a646%3Fdate%3D1%26commit%3D1&style=flat)](https://forge.laravel.com/servers/448774/sites/1306421)
 
 ## Development
 

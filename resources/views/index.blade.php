@@ -5,7 +5,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ mix('js/index.js') }}"></script>
+    @vite(['resources/js/index.js'])
 @endsection
 
 @section('content')

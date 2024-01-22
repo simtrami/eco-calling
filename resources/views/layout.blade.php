@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{{ asset('images/favicon.png') }}"/>
+    <link rel="icon" href="{{ Vite::asset('resources/images/favicon.png') }}"/>
 
     <title>@yield('title', config('app.name'))</title>
 
@@ -30,7 +30,7 @@
     <!-- Analytics -->
     {!! config('app.analytics.script')  !!}
 
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css'])
     @yield('stylesheets')
 </head>
 
@@ -50,7 +50,7 @@
 
 <x-footer></x-footer>
 
-<script src="{{ mix('js/app.js') }}"></script>
+@vite(['resources/js/app.js'])
 @yield('scripts')
 
 </body>

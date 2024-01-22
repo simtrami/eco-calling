@@ -1,4 +1,8 @@
-module.exports = {
+import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
+
+/** @type {import('tailwindcss').Config} */
+export default {
     content: [
         './resources/**/*.blade.php',
         './resources/js/*.js',
@@ -18,8 +22,8 @@ module.exports = {
                 darker: "var(--color-darker)",
             },
             fontFamily: {
-                body: "Montserrat, sans-serif",
-                title: "d-din-condensed, sans-serif",
+                body: ['Montserrat', ...defaultTheme.fontFamily.sans],
+                title: ['d-din-condensed', ...defaultTheme.fontFamily.sans],
             },
             maxWidth: {
                 '11/12': '91.666667%',
@@ -29,5 +33,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [forms],
 }

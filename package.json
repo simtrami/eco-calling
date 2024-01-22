@@ -1,13 +1,12 @@
 {
     "private": true,
     "scripts": {
-        "dev": "yarn run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "yarn run production",
-        "production": "mix --production"
+        "dev": "vite",
+        "build": "vite build",
+        "development": "yarn run dev",
+        "watch": "yarn run dev",
+        "prod": "yarn run build",
+        "production": "yarn run build"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.0",
@@ -15,11 +14,13 @@
         "browser-sync": "^2.26.14",
         "browser-sync-webpack-plugin": "2.3.0",
         "cross-env": "^7.0",
-        "laravel-mix": "^6",
+        "laravel-vite-plugin": "^1.0.1",
         "lodash": "^4.17.19",
         "postcss": "^8.4.12",
         "resolve-url-loader": "^4.0",
         "tailwindcss": "^3.0.24",
-        "typeface-montserrat": "^1.1.13"
-    }
+        "typeface-montserrat": "^1.1.13",
+        "vite": "^5.0.12"
+    },
+    "type": "module"
 }

@@ -1,3 +1,8 @@
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+]);
+
 /*
 * Enable dark mode when it is enabled on the user's operating system or when they manually activate it.
 * Tailwind turns on dark mode when it detects the 'dark' document scope, ie. when the <html> tag has the 'dark' class.

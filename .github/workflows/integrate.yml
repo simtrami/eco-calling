@@ -25,11 +25,11 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@master
         with:
-          php-version: '8.1'
+          php-version: '8.2'
       - name: Setup node
         uses: actions/setup-node@master
         with:
-          node-version: 16
+          node-version: 20
       - uses: actions/checkout@master
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -38,7 +38,7 @@ jobs:
       - name: Install Node dependencies
         run: yarn install --non-interactive --pure-lockfile --force --production=false
       - name: Compile assets with Yarn
-        run: yarn run production
+        run: yarn run build
       - name: Generate key
         run: php artisan key:generate
       - name: Set directory permissions

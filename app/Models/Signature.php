@@ -49,7 +49,9 @@ class Signature extends Model implements MustVerifyEmail
 
     protected $fillable = ['first_name', 'last_name', 'email'];
 
-    protected $dates = ['email_verified_at'];
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
     /**
      * Get the signatory's full name formatted with the first name

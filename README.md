@@ -8,18 +8,17 @@
 
 ## Development
 
-This project uses the [Laravel 9](https://laravel.com/) framework with [TailwindCSS 3](https://tailwindcss.com) for
-styling.
+This project uses the [Laravel 10](https://laravel.com/) framework with [TailwindCSS 3](https://tailwindcss.com) for styling.
 Please, refer to the appropriate documentations for contributing to the project.
 
 ### Environment
 
 In order to test the code, you will need to comply with the
-requirements [here](https://laravel.com/docs/9.x/installation#server-requirements). For setting up your environment
-quickly, consider using [Valet](https://laravel.com/docs/9.x/valet)
-if you are on MacOS, or [Homestead](https://laravel.com/docs/9.x/homestead) otherwise. You will only require
+requirements [here](https://laravel.com/docs/10.x/installation#server-requirements). For setting up your environment
+quickly, consider using [Valet](https://laravel.com/docs/10.x/valet)
+if you are on MacOS, or [Homestead](https://laravel.com/docs/10.x/homestead) otherwise. You will only require
 the [PHP CLI](https://www.php.net/downloads) (≥v8.1)
-and the [Composer executable](https://getcomposer.org/download/).
+and the [Composer executable](https://getcomposer.org/download/) (≥v2.2).
 
 You will also need NodeJS and Yarn installed in your development environment. If you chose to use Homestead, you have
 nothing to do. Otherwise, install NodeJS according to your system's best practices and refer
@@ -29,7 +28,7 @@ to [Yarn's documentation](https://classic.yarnpkg.com/en/docs/install) to instal
 
 If you are new to using Laravel, consider taking the time to familiarize with the framework concepts. There are
 plentiful of resources on the subjects, the most important being
-the [official documentation](https://laravel.com/docs/9.x)
+the [official documentation](https://laravel.com/docs/10.x)
 and the [Laracasts video guides](https://laracasts.com/topics/laravel).
 
 Once you have cloned the repository, install the project's dependencies and compile the assets for your environment.
@@ -39,7 +38,7 @@ git clone https://github.com/simtrami/eco-calling
 cd eco-calling
 composer install
 yarn install
-yarn dev
+yarn run dev
 ```
 
 The application's environment parameters must be set in the `.env` file in the project root directory. If you don't have
@@ -63,19 +62,18 @@ php artisan serve
 
 ### Working with assets
 
-If you are going to edit CSS and Javascript files, keep in mind that you will have to compile them with Laravel Mix if
-you want to see your changes. You can use the _watch_ script to automatically run compilation everytime you save a
+If you are going to edit CSS and Javascript files, keep in mind that you will have to compile them with [Laravel Vite](https://laravel.com/docs/10.x/vite) if
+you want to see your changes. You can use the _vite_ script to automatically run compilation everytime you save a
 modification.
 
 ```bash
-mix watch
+vite
 ```
 
 The browser sync feature is activated when in a development environment. It will refresh your page everytime you save
-changes in the watched files. You can configure this behaviour in the `webpack.mix.js` file.
+changes in the watched files.
 
-Learn more in the [Laravel documentation](https://laravel.com/docs/9.x/mix) and
-the [Mix documentation](https://laravel-mix.com/docs/6.0).
+Learn more in the [Laravel Vite documentation](https://laravel.com/docs/10.x/vite).
 
 ### Testing
 
@@ -85,7 +83,7 @@ Homestead, make sure to run the tests inside the Vagrant box as you might encoun
 otherwise.
 
 For anything regarding testing, please refer to
-the [Laravel testing documentation](https://laravel.com/docs/9.x/testing).
+the [Laravel testing documentation](https://laravel.com/docs/10.x/testing).
 
 ## Production
 
@@ -102,7 +100,7 @@ cd /home/forge/eco-calling.simtrami.net
 git pull origin main
 composer install --no-interaction --prefer-dist --optimize-autoloader
 yarn install --non-interactive --pure-lockfile --force --production=false
-yarn run production
+yarn run build
 
 ( flock -w 10 9 || exit 1
     echo 'Restarting FPM...'; sudo -S service php-fpm reload ) 9>/tmp/fpmlock
@@ -128,7 +126,7 @@ In order to build the css and js files during the app's deployment, add a _post_
 ```shell
 #!/bin/bash
 # Frontend build
-yarn install --non-interactive --pure-lockfile --force --production=false && yarn run production
+yarn install --non-interactive --pure-lockfile --force --production=false && yarn run build
 ```
 
 Then add the following variable in your app's environment.

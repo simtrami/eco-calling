@@ -8,18 +8,17 @@
 
 ## Development
 
-This project uses the [Laravel 9](https://laravel.com/) framework with [TailwindCSS 3](https://tailwindcss.com) for
-styling.
+This project uses the [Laravel 10](https://laravel.com/) framework with [TailwindCSS 3](https://tailwindcss.com) for styling.
 Please, refer to the appropriate documentations for contributing to the project.
 
 ### Environment
 
 In order to test the code, you will need to comply with the
-requirements [here](https://laravel.com/docs/9.x/installation#server-requirements). For setting up your environment
-quickly, consider using [Valet](https://laravel.com/docs/9.x/valet)
-if you are on MacOS, or [Homestead](https://laravel.com/docs/9.x/homestead) otherwise. You will only require
+requirements [here](https://laravel.com/docs/10.x/installation#server-requirements). For setting up your environment
+quickly, consider using [Valet](https://laravel.com/docs/10.x/valet)
+if you are on MacOS, or [Homestead](https://laravel.com/docs/10.x/homestead) otherwise. You will only require
 the [PHP CLI](https://www.php.net/downloads) (≥v8.1)
-and the [Composer executable](https://getcomposer.org/download/).
+and the [Composer executable](https://getcomposer.org/download/) (≥v2.2).
 
 You will also need NodeJS and Yarn installed in your development environment. If you chose to use Homestead, you have
 nothing to do. Otherwise, install NodeJS according to your system's best practices and refer
@@ -29,7 +28,7 @@ to [Yarn's documentation](https://classic.yarnpkg.com/en/docs/install) to instal
 
 If you are new to using Laravel, consider taking the time to familiarize with the framework concepts. There are
 plentiful of resources on the subjects, the most important being
-the [official documentation](https://laravel.com/docs/9.x)
+the [official documentation](https://laravel.com/docs/10.x)
 and the [Laracasts video guides](https://laracasts.com/topics/laravel).
 
 Once you have cloned the repository, install the project's dependencies and compile the assets for your environment.
@@ -74,7 +73,7 @@ mix watch
 The browser sync feature is activated when in a development environment. It will refresh your page everytime you save
 changes in the watched files. You can configure this behaviour in the `webpack.mix.js` file.
 
-Learn more in the [Laravel documentation](https://laravel.com/docs/9.x/mix) and
+Learn more in the [Laravel documentation](https://laravel.com/docs/10.x/mix) and
 the [Mix documentation](https://laravel-mix.com/docs/6.0).
 
 ### Testing
@@ -85,7 +84,7 @@ Homestead, make sure to run the tests inside the Vagrant box as you might encoun
 otherwise.
 
 For anything regarding testing, please refer to
-the [Laravel testing documentation](https://laravel.com/docs/9.x/testing).
+the [Laravel testing documentation](https://laravel.com/docs/10.x/testing).
 
 ## Production
 
